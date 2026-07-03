@@ -8,7 +8,7 @@ import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
 import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
 import type { Mesh } from "@babylonjs/core/Meshes/mesh";
 import { PhysicsAggregate } from "@babylonjs/core/Physics/v2/physicsAggregate";
-import { PhysicsActivationControl, PhysicsMotionType, PhysicsShapeType } from "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin";
+import { PhysicsActivationControl, PhysicsMotionType, PhysicsPrestepType, PhysicsShapeType } from "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin";
 import type { PhysicsBody } from "@babylonjs/core/Physics/v2/physicsBody";
 import type { Scene } from "@babylonjs/core/scene";
 import type { FieldModule } from "../modules/FieldModule";
@@ -180,6 +180,9 @@ export class SimWorld {
 
     this.robot.syncPoseFromPhysics();
     this.updateRobotMotionFromNetworkTables(dtSeconds, nowSeconds);
+    if (this.robot.motionMode === "physics-from-module-states") {
+      this.robot.applySuspensionStability(dtSeconds);
+    }
     this.intake.updateFromRobotPose(this.getRobotFramePose());
     this.updateGamePiecePoses();
     this.updateIntakeState(nowSeconds);
@@ -515,7 +518,7 @@ export class SimWorld {
 
     const aggregate = new PhysicsAggregate(mesh, PhysicsShapeType.BOX, {
       mass: this.robotConfig.massKg,
-      friction: 1.25,
+      friction: 0.04,
       restitution: 0.01,
     }, this.scene);
     aggregate.body.setMotionType(PhysicsMotionType.DYNAMIC);
@@ -524,8 +527,8 @@ export class SimWorld {
       mass: this.robotConfig.massKg,
       centerOfMass: new Vector3(0, -this.robotConfig.heightMeters * 0.38, 0),
     });
-    aggregate.body.setLinearDamping(0.38);
-    aggregate.body.setAngularDamping(1.08);
+    aggregate.body.setLinearDamping(0.02);
+    aggregate.body.setAngularDamping(0.08);
     this.keepBodyAlwaysActive(aggregate.body);
     this.robot = new RobotObject("robot", pose, this.robotConfig, mesh, aggregate.body);
   }
@@ -608,6 +611,7 @@ export class SimWorld {
     }, this.scene);
     aggregate.body.setLinearDamping(0.16);
     aggregate.body.setAngularDamping(0.22);
+    aggregate.body.setPrestepType(PhysicsPrestepType.TELEPORT);
     aggregate.body.setLinearVelocity(Vector3.Zero());
     aggregate.body.setAngularVelocity(Vector3.Zero());
     this.gamePieces.push(new GamePieceObject(id, pose, mesh, aggregate.body));
@@ -707,7 +711,7 @@ export class SimWorld {
         // invisible held collider can never push the robot chassis or free balls.
         piece.pose = this.getHeldGamePiecePose(heldIndex);
         piece.mesh.isVisible = false;
-        piece.mesh.setEnabled(false);
+        piece.mesh.setEnabled(true);
         this.parkGamePieceBody(piece, heldIndex);
         heldIndex += 1;
       }
@@ -721,9 +725,15 @@ export class SimWorld {
     const parked = new Vector3(0, -10 - index * (this.gamePieceRadiusMeters * 2 + 0.1), 0);
     piece.mesh.position.copyFrom(parked);
     piece.mesh.computeWorldMatrix(true);
-    piece.body?.transformNode.setAbsolutePosition(parked);
-    piece.body?.setLinearVelocity(Vector3.Zero());
-    piece.body?.setAngularVelocity(Vector3.Zero());
+    if (piece.body) {
+      piece.body.setMotionType(PhysicsMotionType.ANIMATED);
+      piece.body.setPrestepType(PhysicsPrestepType.TELEPORT);
+      piece.body.transformNode.setEnabled(true);
+      piece.body.transformNode.setAbsolutePosition(parked);
+      piece.body.transformNode.computeWorldMatrix(true);
+      piece.body.setLinearVelocity(Vector3.Zero());
+      piece.body.setAngularVelocity(Vector3.Zero());
+    }
   }
 
   private getHeldGamePiecePose(index: number) {
@@ -753,9 +763,10 @@ export class SimWorld {
     piece.pose = this.getHeldGamePiecePose(heldIndex);
     if (piece.mesh) {
       piece.mesh.isVisible = false;
-      piece.mesh.setEnabled(false);
+      piece.mesh.setEnabled(true);
     }
     piece.body?.setMotionType(PhysicsMotionType.ANIMATED);
+    piece.body?.setPrestepType(PhysicsPrestepType.TELEPORT);
     this.parkGamePieceBody(piece, heldIndex);
   }
 
@@ -871,28 +882,39 @@ export class SimWorld {
       target,
       requestedSpeed,
     );
-    const launchPosition = poseToVector3(launchPose);
-    // Set the transform BEFORE re-enabling the mesh/physics body so the ball never
-    // flashes or collides at its old parked/held location for one frame.
-    if (held.mesh) {
-      held.mesh.position.copyFrom(launchPosition);
-      held.mesh.rotationQuaternion = poseToQuaternion(launchPose);
-      held.mesh.computeWorldMatrix(true);
-      held.mesh.setEnabled(true);
-      held.mesh.isVisible = true;
-    }
-    if (held.body) {
-      held.body.transformNode.setAbsolutePosition(launchPosition);
-      held.body.transformNode.rotationQuaternion = poseToQuaternion(launchPose);
-      held.body.transformNode.computeWorldMatrix(true);
-      held.body.transformNode.setEnabled(true);
-      held.body.setMotionType(PhysicsMotionType.DYNAMIC);
-    }
-    held.pose = launchPose;
-    held.body?.setLinearVelocity(velocity);
-    held.body?.setAngularVelocity(new Vector3(0, 0, 0));
+    this.launchHeldGamePiece(held, launchPose, velocity);
     const shotPeriodSeconds = 1 / Math.max(0.1, this.shooterConfig.shotsPerSecond);
     this.nextShotAllowedAtSeconds = nowSeconds + shotPeriodSeconds;
+  }
+
+  private launchHeldGamePiece(piece: GamePieceObject, launchPose: Pose3dDto, velocity: Vector3) {
+    const launchPosition = poseToVector3(launchPose);
+    const launchRotation = poseToQuaternion(launchPose);
+    piece.pose = launchPose;
+
+    if (piece.body) {
+      piece.body.setMotionType(PhysicsMotionType.ANIMATED);
+      piece.body.setPrestepType(PhysicsPrestepType.TELEPORT);
+      piece.body.setLinearVelocity(Vector3.Zero());
+      piece.body.setAngularVelocity(Vector3.Zero());
+    }
+    if (piece.mesh) {
+      piece.mesh.setEnabled(true);
+      piece.mesh.isVisible = true;
+      piece.mesh.position.copyFrom(launchPosition);
+      piece.mesh.rotationQuaternion = launchRotation.clone();
+      piece.mesh.computeWorldMatrix(true);
+    }
+    if (piece.body) {
+      piece.body.transformNode.setEnabled(true);
+      piece.body.transformNode.setAbsolutePosition(launchPosition);
+      piece.body.transformNode.rotationQuaternion = launchRotation.clone();
+      piece.body.transformNode.computeWorldMatrix(true);
+      piece.body.setMotionType(PhysicsMotionType.DYNAMIC);
+      piece.body.setPrestepType(PhysicsPrestepType.TELEPORT);
+      piece.body.setLinearVelocity(velocity);
+      piece.body.setAngularVelocity(Vector3.Zero());
+    }
   }
 
   private getAuthoritativeRobotPose() {

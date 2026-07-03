@@ -2,7 +2,6 @@ import type { Mesh } from "@babylonjs/core/Meshes/mesh";
 import type { PhysicsBody } from "@babylonjs/core/Physics/v2/physicsBody";
 import { Vector3 } from "@babylonjs/core/Maths/math.vector";
 import {
-  rotateFieldCoreVectorToRobot,
   rotateRobotVectorToFieldCore,
   type RobotDriveModuleCommand,
 } from "../math/driveCoordinates";
@@ -67,43 +66,83 @@ export class RobotObject extends BaseSimObject {
     const center = this.mesh.getAbsolutePosition();
     const linearVelocity = this.body.getLinearVelocity();
     const angularVelocity = this.body.getAngularVelocity();
-    const robotVelocity = rotateFieldCoreVectorToRobot(
-      linearVelocity.x,
-      linearVelocity.z,
-      robotFrameYawRadians,
-    );
-    // Babylon left-handed +Y angular velocity is opposite the WPILib-style CCW
-    // yaw used by module states / chassis speeds / reset pose semantics.
-    const robotOmegaRadiansPerSecond = -angularVelocity.y;
     const massPerModule = this.config.massKg / commands.length;
-    const maxModuleImpulse = massPerModule * 9.81 * 1.35 * dtSeconds;
+    const normalForcePerModule = (this.config.massKg * 9.81) / commands.length;
+    const maxDriveImpulse = normalForcePerModule * DRIVE_GRIP_G * dtSeconds;
+    const maxSideImpulse = normalForcePerModule * SIDE_GRIP_G * dtSeconds;
 
     commands.forEach((command) => {
       const wheelAxisRobotX = Math.cos(command.angleRadians);
       const wheelAxisRobotY = Math.sin(command.angleRadians);
-      const moduleVelocityRobotX = robotVelocity.x - robotOmegaRadiansPerSecond * command.locationMeters.y;
-      const moduleVelocityRobotY = robotVelocity.y + robotOmegaRadiansPerSecond * command.locationMeters.x;
-      const targetModuleVelocityRobotX = command.speedMetersPerSecond * wheelAxisRobotX;
-      const targetModuleVelocityRobotY = command.speedMetersPerSecond * wheelAxisRobotY;
-      const velocityErrorAlongWheel =
-        (targetModuleVelocityRobotX - moduleVelocityRobotX) * wheelAxisRobotX +
-        (targetModuleVelocityRobotY - moduleVelocityRobotY) * wheelAxisRobotY;
-      const moduleImpulse = clamp(massPerModule * velocityErrorAlongWheel, -maxModuleImpulse, maxModuleImpulse);
-      const fieldImpulse = rotateRobotVectorToFieldCore(
-        moduleImpulse * wheelAxisRobotX,
-        moduleImpulse * wheelAxisRobotY,
-        robotFrameYawRadians,
+      const driveDirection = horizontalUnit(
+        rotateRobotVectorToFieldCore(wheelAxisRobotX, wheelAxisRobotY, robotFrameYawRadians),
       );
-      const fieldLocation = rotateRobotVectorToFieldCore(
+      const sideDirection = horizontalUnit(
+        rotateRobotVectorToFieldCore(-wheelAxisRobotY, wheelAxisRobotX, robotFrameYawRadians),
+      );
+      const fieldModuleOffset = rotateRobotVectorToFieldCore(
         command.locationMeters.x,
         command.locationMeters.y,
         robotFrameYawRadians,
       );
-      this.body?.applyImpulse(
-        new Vector3(fieldImpulse.x, 0, fieldImpulse.z),
-        center.add(new Vector3(fieldLocation.x, 0, fieldLocation.z)),
+      const worldOffset = new Vector3(fieldModuleOffset.x, 0, fieldModuleOffset.z);
+      const modulePointVelocity = linearVelocity.add(Vector3.Cross(angularVelocity, worldOffset));
+      modulePointVelocity.y = 0;
+
+      const targetVelocity = driveDirection.scale(command.speedMetersPerSecond);
+      const driveVelocityError = Vector3.Dot(targetVelocity.subtract(modulePointVelocity), driveDirection);
+      const driveImpulseMagnitude = clamp(
+        massPerModule * driveVelocityError,
+        -maxDriveImpulse,
+        maxDriveImpulse,
       );
+      const sideVelocity = Vector3.Dot(modulePointVelocity, sideDirection);
+      const sideImpulseMagnitude = clamp(
+        -massPerModule * sideVelocity,
+        -maxSideImpulse,
+        maxSideImpulse,
+      );
+      const impulse = driveDirection
+        .scale(driveImpulseMagnitude)
+        .add(sideDirection.scale(sideImpulseMagnitude));
+
+      this.body?.applyImpulse(impulse, center.add(worldOffset));
     });
+  }
+
+  applySuspensionStability(dtSeconds: number) {
+    if (!this.body || !this.mesh || dtSeconds <= 0) {
+      return;
+    }
+    const rotation = vectorQuaternionToPose(
+      this.mesh.position,
+      this.mesh.rotationQuaternion ?? poseToQuaternion(this.pose),
+    ).rotation;
+    const angularVelocity = this.body.getAngularVelocity();
+    const maxAngularImpulse = this.config.massKg * MAX_UPRIGHT_ANGULAR_IMPULSE_PER_KG_PER_SECOND * dtSeconds;
+    const pitchImpulse = clamp(
+      suspensionAngularImpulse(
+        rotation.pitch,
+        angularVelocity.x,
+        estimateBodyInertiaAroundX(this.config),
+        dtSeconds,
+      ),
+      -maxAngularImpulse,
+      maxAngularImpulse,
+    );
+    const rollImpulse = clamp(
+      suspensionAngularImpulse(
+        rotation.roll,
+        angularVelocity.z,
+        estimateBodyInertiaAroundZ(this.config),
+        dtSeconds,
+      ),
+      -maxAngularImpulse,
+      maxAngularImpulse,
+    );
+    if (Math.abs(pitchImpulse) > 1e-6 || Math.abs(rollImpulse) > 1e-6) {
+      this.body.applyAngularImpulse(new Vector3(pitchImpulse, 0, rollImpulse));
+    }
   }
 
   /**
@@ -114,3 +153,46 @@ export class RobotObject extends BaseSimObject {
 }
 
 const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+
+const DRIVE_GRIP_G = 3.2;
+const SIDE_GRIP_G = 2.2;
+const UPRIGHT_DEADBAND_RADIANS = (18 * Math.PI) / 180;
+const UPRIGHT_NATURAL_FREQUENCY_RADIANS_PER_SECOND = 8;
+const UPRIGHT_DAMPING_RATIO = 0.85;
+const MAX_UPRIGHT_ANGULAR_IMPULSE_PER_KG_PER_SECOND = 3.2;
+const ROBOT_INERTIA_SCALE = 1.85;
+
+const horizontalUnit = (vector: { x: number; z: number }) => {
+  const length = Math.hypot(vector.x, vector.z);
+  if (length < 1e-9) {
+    return Vector3.Zero();
+  }
+  return new Vector3(vector.x / length, 0, vector.z / length);
+};
+
+const outsideDeadband = (value: number, deadband: number) => {
+  const magnitude = Math.abs(value);
+  return magnitude <= deadband ? 0 : Math.sign(value) * (magnitude - deadband);
+};
+
+const suspensionAngularImpulse = (
+  angleRadians: number,
+  angularVelocityRadiansPerSecond: number,
+  inertiaKgMetersSquared: number,
+  dtSeconds: number,
+) => {
+  const angleError = outsideDeadband(angleRadians, UPRIGHT_DEADBAND_RADIANS);
+  const frequency = UPRIGHT_NATURAL_FREQUENCY_RADIANS_PER_SECOND;
+  const angularAcceleration =
+    -frequency * frequency * angleError -
+    2 * UPRIGHT_DAMPING_RATIO * frequency * angularVelocityRadiansPerSecond;
+  return inertiaKgMetersSquared * angularAcceleration * dtSeconds;
+};
+
+const estimateBodyInertiaAroundX = (config: RobotConfig) =>
+  ((config.massKg * (config.heightMeters * config.heightMeters + config.widthMeters * config.widthMeters)) / 12) *
+  ROBOT_INERTIA_SCALE;
+
+const estimateBodyInertiaAroundZ = (config: RobotConfig) =>
+  ((config.massKg * (config.lengthMeters * config.lengthMeters + config.heightMeters * config.heightMeters)) / 12) *
+  ROBOT_INERTIA_SCALE;
