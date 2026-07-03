@@ -8,7 +8,8 @@ import { StandardMaterial } from "@babylonjs/core/Materials/standardMaterial";
 import type { AbstractMesh } from "@babylonjs/core/Meshes/abstractMesh";
 import type { Mesh } from "@babylonjs/core/Meshes/mesh";
 import { PhysicsAggregate } from "@babylonjs/core/Physics/v2/physicsAggregate";
-import { PhysicsMotionType, PhysicsShapeType } from "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin";
+import { PhysicsActivationControl, PhysicsMotionType, PhysicsShapeType } from "@babylonjs/core/Physics/v2/IPhysicsEnginePlugin";
+import type { PhysicsBody } from "@babylonjs/core/Physics/v2/physicsBody";
 import type { Scene } from "@babylonjs/core/scene";
 import type { FieldModule } from "../modules/FieldModule";
 import {
@@ -19,6 +20,23 @@ import {
   vectorQuaternionToPose,
   type Pose3dDto,
 } from "../math/pose";
+import {
+  FIELD_LENGTH_METERS,
+  FIELD_WIDTH_METERS,
+  MODULE_LOCATIONS,
+  ROBOT_MODEL_YAW_OFFSET_RADIANS,
+  fieldCoreRobotYawToWpilibYaw,
+  fieldCoreXToWpilibBlueX,
+  fieldCoreZToWpilibBlueY,
+  moduleStatesFromChassisSpeeds,
+  robotModelYawToRobotYaw,
+  wpilibBlueXToFieldCoreX,
+  wpilibBlueYToFieldCoreZ,
+  wpilibYawToRobotModelYaw,
+  type RobotChassisSpeeds,
+  type RobotDriveModuleCommand,
+  type RobotModuleState,
+} from "../math/driveCoordinates";
 import { defaultRobotConfig, RobotObject, type RobotConfig } from "../objects/RobotObject";
 import { defaultIntakeConfig, IntakeObject, type IntakeConfig } from "../objects/IntakeObject";
 import { GamePieceObject } from "../objects/GamePieceObject";
@@ -35,28 +53,9 @@ import type { FieldCoreVisionMeasurement } from "../vision/VisionMeasurement";
 import { isPoseInsideBoxSensor } from "./SensorVolume";
 import { tryLoadGlb } from "./AssetLoader";
 
-const FIELD_LENGTH_METERS = 16.541;
-const FIELD_WIDTH_METERS = 8.069;
 const GRAVITY_METERS_PER_SECOND_SQUARED = 9.81;
-const MODULE_HALF_LENGTH_METERS = 0.3429;
-const MODULE_HALF_WIDTH_METERS = 0.3429;
-const MODULE_LOCATIONS = [
-  { x: MODULE_HALF_LENGTH_METERS, y: MODULE_HALF_WIDTH_METERS },
-  { x: MODULE_HALF_LENGTH_METERS, y: -MODULE_HALF_WIDTH_METERS },
-  { x: -MODULE_HALF_LENGTH_METERS, y: MODULE_HALF_WIDTH_METERS },
-  { x: -MODULE_HALF_LENGTH_METERS, y: -MODULE_HALF_WIDTH_METERS },
-] as const;
-
-interface RobotChassisSpeeds {
-  vxMetersPerSecond: number;
-  vyMetersPerSecond: number;
-  omegaRadiansPerSecond: number;
-}
-
-interface RobotModuleState {
-  speedMetersPerSecond: number;
-  angleRadians: number;
-}
+// Field-frame |x| of the hub centers (blue at -x, red at +x in FieldCore coords).
+const HUB_CENTER_X_METERS = 6.2;
 
 export interface ShooterConfig {
   enabledTopic: string;
@@ -78,7 +77,9 @@ export const defaultShooterConfig: ShooterConfig = {
   rpmTopic: robotToFieldCoreTopics.shooterRPM,
   hoodAngleTopic: robotToFieldCoreTopics.hoodAngleDeg,
   exitPoseFromRobotCenter: {
-    translation: { x: 0.35, y: 0.45, z: 0 },
+    // Balls launch from the top of the robot, straight above chassis center,
+    // clear of the chassis collider (robot top ~0.55m + ball radius).
+    translation: { x: 0, y: 0.45, z: 0 },
     rotation: { roll: 0, pitch: 0, yaw: 0 },
   },
   baseLaunchSpeedMetersPerSecond: 7,
@@ -156,11 +157,11 @@ export class SimWorld {
     this.createIntake();
     this.resetGamePieces();
     this.visionSystem = new VisionSimulationSystem(
-      () => this.robot.pose,
+      () => this.getRobotFramePose(),
       this.module.createVisionTargets(),
       this.nt,
       this.visionConfig,
-      (pose) => this.fieldCoreRobotPoseToWallBluePose(pose),
+      (pose) => this.robotFramePoseToWallBluePose(pose),
     );
     this.bindNtTopics();
   }
@@ -179,7 +180,7 @@ export class SimWorld {
 
     this.robot.syncPoseFromPhysics();
     this.updateRobotMotionFromNetworkTables(dtSeconds, nowSeconds);
-    this.intake.updateFromRobotPose(this.robot.pose);
+    this.intake.updateFromRobotPose(this.getRobotFramePose());
     this.updateGamePiecePoses();
     this.updateIntakeState(nowSeconds);
     this.updateShooter(nowSeconds);
@@ -187,7 +188,7 @@ export class SimWorld {
     this.visionMeasurement = this.visionSystem.update(nowSeconds);
     if (nowSeconds - this.lastDebugPublishSeconds >= 0.25) {
       this.lastDebugPublishSeconds = nowSeconds;
-      this.nt.publish(debugTopics.trueRobotPose, poseToArray(this.robot.pose));
+      this.nt.publish(debugTopics.trueRobotPose, poseToArray(this.getRobotFramePose()));
       this.nt.publish(
         debugTopics.gamePieceStates,
         this.gamePieces.map((piece) => ({ id: piece.id, state: piece.state, pose: poseToArray(piece.pose) })),
@@ -204,7 +205,7 @@ export class SimWorld {
       physicsFps: this.physicsFps,
       ntConnected,
       ntStatusMessage: this.ntStatusMessage,
-      robotPose: this.robot.pose,
+      robotPose: this.getRobotFramePose(),
       heldGamePieces: this.gamePieces.filter((piece) => piece.state === "HELD").length,
       gamePieces: this.gamePieces.length,
       vision: this.visionMeasurement,
@@ -466,31 +467,75 @@ export class SimWorld {
   }
 
   private createRobot() {
+    const pose = this.createNeutralRobotPose();
     const robotMaterial = new StandardMaterial("robot-mat", this.scene);
     robotMaterial.diffuseColor = Color3.FromHexString(this.robotConfig.color);
-    const mesh = MeshBuilder.CreateBox("robot", {
+    const mesh = MeshBuilder.CreateBox("robot-physics", {
       width: this.robotConfig.lengthMeters,
       depth: this.robotConfig.widthMeters,
       height: this.robotConfig.heightMeters,
     }, this.scene);
-    mesh.material = robotMaterial;
-    const pose = this.createNeutralRobotPose();
+    const physicsMaterial = new StandardMaterial("robot-physics-mat", this.scene);
+    physicsMaterial.diffuseColor = new Color3(0.15, 0.18, 0.22);
+    physicsMaterial.alpha = 0;
+    mesh.material = physicsMaterial;
     mesh.position = poseToVector3(pose);
     mesh.rotationQuaternion = poseToQuaternion(pose);
+
+    const visual = MeshBuilder.CreateBox("robot-visual", {
+      width: this.robotConfig.lengthMeters,
+      depth: this.robotConfig.widthMeters,
+      height: this.robotConfig.heightMeters,
+    }, this.scene);
+    visual.parent = mesh;
+    visual.material = robotMaterial;
+    visual.position.set(0, 0, 0);
+
+    const tailMaterial = new StandardMaterial("robot-tail-mat", this.scene);
+    tailMaterial.diffuseColor = new Color3(0.1, 0.9, 0.62);
+    const tailMarker = MeshBuilder.CreateBox("robot-tail-marker", {
+      width: 0.035,
+      depth: this.robotConfig.widthMeters * 0.9,
+      height: this.robotConfig.heightMeters * 0.88,
+    }, this.scene);
+    tailMarker.parent = mesh;
+    tailMarker.material = tailMaterial;
+    tailMarker.position.set(-this.robotConfig.lengthMeters / 2 - 0.018, 0, 0);
+
+    const frontMaterial = new StandardMaterial("robot-front-mat", this.scene);
+    frontMaterial.diffuseColor = new Color3(0.55, 0.8, 1);
+    const frontMarker = MeshBuilder.CreateBox("robot-front-marker", {
+      width: 0.035,
+      depth: this.robotConfig.widthMeters * 0.45,
+      height: this.robotConfig.heightMeters * 0.88,
+    }, this.scene);
+    frontMarker.parent = mesh;
+    frontMarker.material = frontMaterial;
+    frontMarker.position.set(this.robotConfig.lengthMeters / 2 + 0.018, 0, 0);
+
     const aggregate = new PhysicsAggregate(mesh, PhysicsShapeType.BOX, {
       mass: this.robotConfig.massKg,
-      friction: 1.1,
-      restitution: 0.02,
+      friction: 1.25,
+      restitution: 0.01,
     }, this.scene);
     aggregate.body.setMotionType(PhysicsMotionType.DYNAMIC);
     aggregate.body.disablePreStep = false;
     aggregate.body.setMassProperties({
       mass: this.robotConfig.massKg,
-      centerOfMass: new Vector3(0, -this.robotConfig.heightMeters * 0.22, 0),
+      centerOfMass: new Vector3(0, -this.robotConfig.heightMeters * 0.38, 0),
     });
-    aggregate.body.setLinearDamping(0.18);
-    aggregate.body.setAngularDamping(0.55);
+    aggregate.body.setLinearDamping(0.38);
+    aggregate.body.setAngularDamping(1.08);
+    this.keepBodyAlwaysActive(aggregate.body);
     this.robot = new RobotObject("robot", pose, this.robotConfig, mesh, aggregate.body);
+  }
+
+  private keepBodyAlwaysActive(body: PhysicsBody) {
+    const plugin = this.scene.getPhysicsEngine()?.getPhysicsPlugin();
+    if (plugin && "setActivationControl" in plugin) {
+      (plugin as { setActivationControl: (physicsBody: PhysicsBody, control: PhysicsActivationControl) => void })
+        .setActivationControl(body, PhysicsActivationControl.ALWAYS_ACTIVE);
+    }
   }
 
   private createIntake() {
@@ -573,12 +618,13 @@ export class SimWorld {
       this.robotEnabled = value;
     });
     this.nt.subscribe<number[]>(robotToFieldCoreTopics.poseEstimate, (value) => {
-      this.robotEstimatedPose = this.wallBlueRobotPoseArrayToFieldCorePose(value);
-      if (!this.robotPoseInitializedFromNt) {
-        this.robot.setPose(this.robotEstimatedPose);
+      const pose = this.wallBlueRobotPoseArrayToFieldCorePose(value);
+      this.robotEstimatedPose = pose;
+      this.lastRobotPoseUpdateSeconds = performance.now() / 1000;
+      if (!this.robotPoseInitializedFromNt || this.robot.motionMode === "networktables-pose") {
+        this.robot.setPose(pose);
         this.robotPoseInitializedFromNt = true;
       }
-      this.lastRobotPoseUpdateSeconds = performance.now() / 1000;
     });
     this.nt.subscribe<number[]>(robotToFieldCoreTopics.chassisSpeeds, (value) => {
       this.robotChassisSpeeds = {
@@ -624,49 +670,26 @@ export class SimWorld {
       this.robot.stopDrive();
       return;
     }
-    const twist =
-      nowSeconds - this.lastModuleStatesUpdateSeconds < 0.25 && this.robotModuleStates.length >= 4
-        ? this.chassisSpeedsFromModuleStates(this.robotModuleStates)
-        : nowSeconds - this.lastChassisSpeedsUpdateSeconds < 0.25
-          ? this.robotChassisSpeeds
-          : null;
-    if (!twist) {
+    if (this.robot.motionMode === "networktables-pose") {
       this.robot.stopDrive();
       return;
     }
-    const speedMagnitude = Math.hypot(twist.vxMetersPerSecond, twist.vyMetersPerSecond);
-    if (speedMagnitude < 1e-4 && Math.abs(twist.omegaRadiansPerSecond) < 1e-4) {
+    const moduleCommands =
+      nowSeconds - this.lastModuleStatesUpdateSeconds < 0.25 && this.robotModuleStates.length >= 4
+        ? this.robotModuleStates.slice(0, MODULE_LOCATIONS.length)
+        : nowSeconds - this.lastChassisSpeedsUpdateSeconds < 0.25 && this.robotChassisSpeeds
+          ? moduleStatesFromChassisSpeeds(this.robotChassisSpeeds)
+          : null;
+    if (!moduleCommands) {
+      this.robot.stopDrive();
       return;
     }
-    const yaw = this.robot.pose.rotation.yaw;
-    const cos = Math.cos(yaw);
-    const sin = Math.sin(yaw);
-    const fieldVx = cos * twist.vxMetersPerSecond - sin * twist.vyMetersPerSecond;
-    const fieldVz = sin * twist.vxMetersPerSecond + cos * twist.vyMetersPerSecond;
-    this.robot.setDriveVelocity(fieldVx, fieldVz, twist.omegaRadiansPerSecond);
-  }
-
-  private chassisSpeedsFromModuleStates(states: RobotModuleState[]): RobotChassisSpeeds {
-    const wheelVectors = states.slice(0, MODULE_LOCATIONS.length).map((state) => ({
-      vx: state.speedMetersPerSecond * Math.cos(state.angleRadians),
-      vy: state.speedMetersPerSecond * Math.sin(state.angleRadians),
+    const driveCommands: RobotDriveModuleCommand[] = moduleCommands.map((state, index) => ({
+      speedMetersPerSecond: state.speedMetersPerSecond,
+      angleRadians: state.angleRadians,
+      locationMeters: MODULE_LOCATIONS[index],
     }));
-    const vx =
-      wheelVectors.reduce((sum, vector) => sum + vector.vx, 0) / Math.max(1, wheelVectors.length);
-    const vy =
-      wheelVectors.reduce((sum, vector) => sum + vector.vy, 0) / Math.max(1, wheelVectors.length);
-    let omegaNumerator = 0;
-    let omegaDenominator = 0;
-    wheelVectors.forEach((vector, index) => {
-      const location = MODULE_LOCATIONS[index];
-      omegaNumerator += -location.y * (vector.vx - vx) + location.x * (vector.vy - vy);
-      omegaDenominator += location.x * location.x + location.y * location.y;
-    });
-    return {
-      vxMetersPerSecond: vx,
-      vyMetersPerSecond: vy,
-      omegaRadiansPerSecond: omegaDenominator > 1e-9 ? omegaNumerator / omegaDenominator : 0,
-    };
+    this.robot.applyModuleDrive(driveCommands, dtSeconds, this.getRobotFramePose().rotation.yaw);
   }
 
   private updateGamePiecePoses() {
@@ -679,22 +702,33 @@ export class SimWorld {
         };
       }
       if (piece.state === "HELD" && piece.mesh) {
-        const heldPose = this.getHeldGamePiecePose(heldIndex++);
-        piece.pose = heldPose;
+        // Logical inventory pose follows the robot for the inspector/debug topics,
+        // but the actual physics body stays parked far below the field so the
+        // invisible held collider can never push the robot chassis or free balls.
+        piece.pose = this.getHeldGamePiecePose(heldIndex);
         piece.mesh.isVisible = false;
         piece.mesh.setEnabled(false);
-        piece.mesh.position.set(heldPose.translation.x, heldPose.translation.y, heldPose.translation.z);
-        piece.mesh.rotationQuaternion = poseToQuaternion(heldPose);
-        piece.body?.transformNode.setAbsolutePosition(piece.mesh.position);
-        piece.body?.setLinearVelocity(Vector3.Zero());
-        piece.body?.setAngularVelocity(Vector3.Zero());
+        this.parkGamePieceBody(piece, heldIndex);
+        heldIndex += 1;
       }
     });
   }
 
+  private parkGamePieceBody(piece: GamePieceObject, index: number) {
+    if (!piece.mesh) {
+      return;
+    }
+    const parked = new Vector3(0, -10 - index * (this.gamePieceRadiusMeters * 2 + 0.1), 0);
+    piece.mesh.position.copyFrom(parked);
+    piece.mesh.computeWorldMatrix(true);
+    piece.body?.transformNode.setAbsolutePosition(parked);
+    piece.body?.setLinearVelocity(Vector3.Zero());
+    piece.body?.setAngularVelocity(Vector3.Zero());
+  }
+
   private getHeldGamePiecePose(index: number) {
     const slotSpacingMeters = this.gamePieceRadiusMeters * 2.15;
-    return transformPoseOffset(this.robot.pose, {
+    return transformPoseOffset(this.getRobotFramePose(), {
       translation: {
         x: -0.12 - Math.floor(index / 2) * slotSpacingMeters,
         y: -0.13 + Math.floor(index / 4) * this.gamePieceRadiusMeters * 0.8,
@@ -705,7 +739,7 @@ export class SimWorld {
   }
 
   private getIntakeStoragePose() {
-    return transformPoseOffset(this.robot.pose, {
+    return transformPoseOffset(this.getRobotFramePose(), {
       translation: { x: -0.28, y: -0.14, z: 0 },
       rotation: { roll: 0, pitch: 0, yaw: 0 },
     });
@@ -713,20 +747,16 @@ export class SimWorld {
 
   private captureGamePiece(piece: GamePieceObject) {
     const heldIndex = this.gamePieces.filter((candidate) => candidate.state === "HELD").length;
-    const heldPose = this.getHeldGamePiecePose(heldIndex);
     piece.state = "HELD";
     piece.contactStartedAtSeconds = null;
-    piece.pose = heldPose;
-    piece.mesh?.position.set(heldPose.translation.x, heldPose.translation.y, heldPose.translation.z);
+    piece.shotAtSeconds = null;
+    piece.pose = this.getHeldGamePiecePose(heldIndex);
     if (piece.mesh) {
       piece.mesh.isVisible = false;
       piece.mesh.setEnabled(false);
-      piece.mesh.rotationQuaternion = poseToQuaternion(heldPose);
     }
     piece.body?.setMotionType(PhysicsMotionType.ANIMATED);
-    piece.body?.transformNode.setAbsolutePosition(poseToVector3(heldPose));
-    piece.body?.setLinearVelocity(Vector3.Zero());
-    piece.body?.setAngularVelocity(Vector3.Zero());
+    this.parkGamePieceBody(piece, heldIndex);
   }
 
   private updateIntakeState(nowSeconds: number) {
@@ -815,7 +845,10 @@ export class SimWorld {
     const shootCountChanged = this.shootCount > this.lastShootCount;
     this.lastShootCount = this.shootCount;
 
-    if (!this.shooterEnabled && !this.shootCommand && !risingEdge && !shootCountChanged) {
+    // Launch only on an explicit feed/shoot request: a held-true ShootCommand fires
+    // continuously at shotsPerSecond, and ShootCount changes catch short NT pulses.
+    // ShooterEnabled (flywheel above idle) alone must NOT launch game pieces.
+    if (!this.shootCommand && !risingEdge && !shootCountChanged) {
       return;
     }
     if (nowSeconds < this.nextShotAllowedAtSeconds && !risingEdge && !shootCountChanged) {
@@ -828,11 +861,8 @@ export class SimWorld {
     }
 
     held.state = "SHOT";
-    if (held.mesh) {
-      held.mesh.setEnabled(true);
-      held.mesh.isVisible = true;
-    }
-    const launchPose = transformPoseOffset(this.robot.pose, this.shooterConfig.exitPoseFromRobotCenter);
+    held.shotAtSeconds = nowSeconds;
+    const launchPose = transformPoseOffset(this.getAuthoritativeRobotPose(), this.shooterConfig.exitPoseFromRobotCenter);
     const target = this.getAllianceScoringTarget();
     const requestedSpeed =
       this.shooterConfig.baseLaunchSpeedMetersPerSecond + this.shooterRpm * this.shooterConfig.rpmToLaunchSpeedScale;
@@ -842,23 +872,42 @@ export class SimWorld {
       requestedSpeed,
     );
     const launchPosition = poseToVector3(launchPose);
-    held.mesh?.position.copyFrom(launchPosition);
+    // Set the transform BEFORE re-enabling the mesh/physics body so the ball never
+    // flashes or collides at its old parked/held location for one frame.
     if (held.mesh) {
+      held.mesh.position.copyFrom(launchPosition);
       held.mesh.rotationQuaternion = poseToQuaternion(launchPose);
+      held.mesh.computeWorldMatrix(true);
+      held.mesh.setEnabled(true);
+      held.mesh.isVisible = true;
     }
     if (held.body) {
-      held.body.transformNode.setEnabled(true);
       held.body.transformNode.setAbsolutePosition(launchPosition);
       held.body.transformNode.rotationQuaternion = poseToQuaternion(launchPose);
+      held.body.transformNode.computeWorldMatrix(true);
+      held.body.transformNode.setEnabled(true);
       held.body.setMotionType(PhysicsMotionType.DYNAMIC);
     }
+    held.pose = launchPose;
     held.body?.setLinearVelocity(velocity);
     held.body?.setAngularVelocity(new Vector3(0, 0, 0));
     const shotPeriodSeconds = 1 / Math.max(0.1, this.shooterConfig.shotsPerSecond);
     this.nextShotAllowedAtSeconds = nowSeconds + shotPeriodSeconds;
   }
 
+  private getAuthoritativeRobotPose() {
+    if (
+      this.robot.motionMode === "networktables-pose" &&
+      this.robotEstimatedPose != null &&
+      performance.now() / 1000 - this.lastRobotPoseUpdateSeconds < 0.35
+    ) {
+      return this.robotModelPoseToRobotFramePose(this.robotEstimatedPose);
+    }
+    return this.getRobotFramePose();
+  }
+
   private updateScoring() {
+    const nowSeconds = performance.now() / 1000;
     this.gamePieces.forEach((piece) => {
       if (piece.state !== "SHOT") {
         return;
@@ -876,18 +925,70 @@ export class SimWorld {
       });
       if (scored) {
         piece.state = "SCORED";
-        piece.body?.setLinearVelocity(this.scoredFuelExitVelocity(piece.pose.translation.x));
+        piece.shotAtSeconds = null;
+        piece.scoredAtSeconds = nowSeconds;
+        return;
       }
+      // Missed shots settle back onto the field and become intakeable again.
+      if (piece.shotAtSeconds != null && nowSeconds - piece.shotAtSeconds > 2.5) {
+        piece.state = "FREE";
+        piece.shotAtSeconds = null;
+      }
+    });
+
+    // Scored balls pass through the hub and roll back out of a lower exit chute a
+    // moment later, becoming FREE again so they can be re-intaken and re-used.
+    this.gamePieces.forEach((piece) => {
+      if (piece.state !== "SCORED" || piece.scoredAtSeconds == null) {
+        return;
+      }
+      if (nowSeconds - piece.scoredAtSeconds < 0.9) {
+        return;
+      }
+      this.releaseScoredGamePiece(piece);
     });
   }
 
+  private releaseScoredGamePiece(piece: GamePieceObject) {
+    piece.state = "FREE";
+    piece.scoredAtSeconds = null;
+    piece.contactStartedAtSeconds = null;
+    const allianceSign = piece.pose.translation.x < 0 ? -1 : 1;
+    // Exit chute at the hub base, offset toward field center so the ball rolls
+    // back into play instead of resting against the hub collider.
+    const exitPosition = new Vector3(
+      allianceSign * (Math.abs(HUB_CENTER_X_METERS) - 1.05),
+      0.45,
+      (Math.random() - 0.5) * 1.2,
+    );
+    if (piece.mesh) {
+      piece.mesh.position.copyFrom(exitPosition);
+      piece.mesh.computeWorldMatrix(true);
+      piece.mesh.setEnabled(true);
+      piece.mesh.isVisible = true;
+    }
+    if (piece.body) {
+      piece.body.transformNode.setAbsolutePosition(exitPosition);
+      piece.body.transformNode.computeWorldMatrix(true);
+      piece.body.transformNode.setEnabled(true);
+      piece.body.setMotionType(PhysicsMotionType.DYNAMIC);
+      piece.body.setLinearVelocity(new Vector3(allianceSign * -1.1, -0.4, (Math.random() - 0.5) * 0.8));
+      piece.body.setAngularVelocity(Vector3.Zero());
+    }
+    piece.pose = {
+      translation: { x: exitPosition.x, y: exitPosition.y, z: exitPosition.z },
+      rotation: { roll: 0, pitch: 0, yaw: 0 },
+    };
+  }
+
   private getAllianceScoringTarget() {
-    const targetId = this.robot.pose.translation.x < 0 ? "blue" : "red";
+    const robotPose = this.getAuthoritativeRobotPose();
+    const targetId = robotPose.translation.x < 0 ? "blue" : "red";
     const volume =
       this.scoringVolumes.find((candidate) => candidate.id.toLowerCase().includes(targetId)) ??
       this.scoringVolumes[0];
     if (!volume) {
-      return new Vector3(this.robot.pose.translation.x < 0 ? -6.2 : 6.2, 1.25, 0);
+      return new Vector3(robotPose.translation.x < 0 ? -6.2 : 6.2, 1.25, 0);
     }
     return new Vector3(
       volume.pose.translation.x,
@@ -912,11 +1013,6 @@ export class SimWorld {
     return new Vector3(vx, vy, vz);
   }
 
-  private scoredFuelExitVelocity(fieldCoreX: number) {
-    const allianceSign = fieldCoreX < 0 ? -1 : 1;
-    return new Vector3(allianceSign * 0.55, -1.1, 0);
-  }
-
   private createNeutralRobotPose(): Pose3dDto {
     return {
       translation: {
@@ -924,33 +1020,56 @@ export class SimWorld {
         y: this.robotConfig.heightMeters / 2,
         z: 0,
       },
-      rotation: { roll: 0, pitch: 0, yaw: 0 },
+      rotation: { roll: 0, pitch: 0, yaw: ROBOT_MODEL_YAW_OFFSET_RADIANS },
     };
   }
 
   private wallBlueRobotPoseArrayToFieldCorePose(value: readonly number[]): Pose3dDto {
     return {
       translation: {
-        x: (value[0] ?? FIELD_LENGTH_METERS / 2) - FIELD_LENGTH_METERS / 2,
+        x: wpilibBlueXToFieldCoreX(value[0] ?? FIELD_LENGTH_METERS / 2),
         y: (value[2] ?? 0) + this.robotConfig.heightMeters / 2,
-        z: (value[1] ?? FIELD_WIDTH_METERS / 2) - FIELD_WIDTH_METERS / 2,
+        z: wpilibBlueYToFieldCoreZ(value[1] ?? FIELD_WIDTH_METERS / 2),
       },
       rotation: {
         roll: value[3] ?? 0,
         pitch: value[4] ?? 0,
-        yaw: value[5] ?? 0,
+        // Convert WPILib field yaw to the Babylon yaw used by the robot model.
+        yaw: wpilibYawToRobotModelYaw(value[5] ?? 0),
       },
     };
   }
 
   private fieldCoreRobotPoseToWallBluePose(pose: Pose3dDto): Pose3dDto {
+    return this.robotFramePoseToWallBluePose(this.robotModelPoseToRobotFramePose(pose));
+  }
+
+  private robotFramePoseToWallBluePose(pose: Pose3dDto): Pose3dDto {
     return {
       translation: {
-        x: pose.translation.x + FIELD_LENGTH_METERS / 2,
-        y: pose.translation.z + FIELD_WIDTH_METERS / 2,
+        x: fieldCoreXToWpilibBlueX(pose.translation.x),
+        y: fieldCoreZToWpilibBlueY(pose.translation.z),
         z: Math.max(0, pose.translation.y - this.robotConfig.heightMeters / 2),
       },
-      rotation: pose.rotation,
+      rotation: {
+        roll: pose.rotation.roll,
+        pitch: pose.rotation.pitch,
+        yaw: fieldCoreRobotYawToWpilibYaw(pose.rotation.yaw),
+      },
+    };
+  }
+
+  private getRobotFramePose() {
+    return this.robotModelPoseToRobotFramePose(this.robot.pose);
+  }
+
+  private robotModelPoseToRobotFramePose(pose: Pose3dDto): Pose3dDto {
+    return {
+      translation: { ...pose.translation },
+      rotation: {
+        ...pose.rotation,
+        yaw: robotModelYawToRobotYaw(pose.rotation.yaw),
+      },
     };
   }
 

@@ -33,3 +33,11 @@ Open the Vite URL and select `2026 REBUILT Field`.
 ## Important Pose Semantics
 
 Do not use `/FieldCore/Sim/TrueRobotPose` to overwrite robot estimated pose. It is debug-only. Robot code should consume `/FieldCore/Vision/*` and call `poseEstimator.addVisionMeasurement(...)`.
+
+### Simulation Mode
+
+In the default `physics-from-module-states` simulation mode, FieldCore uses the first `/FieldCore/Robot/PoseEstimate` frame only to initialize the robot body, then drives the robot through fresh `/FieldCore/Robot/ModuleStates` with `/FieldCore/Robot/ChassisSpeeds` as a fallback. FieldCore publishes that physical robot pose to the limelight-compatible NT4 topics (`/${limelightTableName}/botpose_wpiblue`, `/${limelightTableName}/botpose_orb_wpiblue`, etc.) and to the FieldCore Vision topics (`/FieldCore/Vision/*`). No noise, latency, or camera simulation is applied in this mode.
+
+Robot code running in simulation (`RobotBase.isSimulation() == true`) can read the standard Limelight NT4 topics through its normal Limelight path and use them as a perfect vision measurement (`reliability = 1.0`, `latency = 0`), calling `poseEstimator.addVisionMeasurement(...)` itself. The user can switch the robot to `Follow NT PoseEstimate` mode in the Robot Config panel if they explicitly want FieldCore to mirror the robot estimator instead of simulating physics.
+
+FieldCore's NT4 client waits for server time sync before sending any value frames and keeps outgoing timestamps monotonic, so `/limelight-a/hb` and `botpose_*` update continuously every frame instead of freezing at the first connect-time frame.

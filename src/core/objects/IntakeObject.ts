@@ -19,14 +19,15 @@ export interface IntakeConfig {
 export const defaultIntakeConfig: IntakeConfig = {
   enabledTopic: "/FieldCore/Robot/IntakeEnabled",
   offsetFromRobotCenter: {
-    translation: { x: 0, y: -0.17, z: -0.56 },
-    rotation: { roll: 0, pitch: 0, yaw: -Math.PI / 2 },
+    // Robot local +X is the forward direction.
+    translation: { x: 0.56, y: -0.17, z: 0 },
+    rotation: { roll: 0, pitch: 0, yaw: 0 },
   },
   sizeMeters: { width: 0.3, length: 0.72, height: 0.28 },
   captureDelaySeconds: 0.12,
   captureRequiresRobotEnabled: true,
   maxHeldCount: 0,
-  visualYawOffsetRad: Math.PI / 2,
+  visualYawOffsetRad: -Math.PI / 2,
 };
 
 export class IntakeObject extends BaseSimObject {
@@ -39,13 +40,20 @@ export class IntakeObject extends BaseSimObject {
   updateFromRobotPose(robotPose: Pose3dDto) {
     this.pose = transformPoseOffset(robotPose, this.config.offsetFromRobotCenter);
     if (this.mesh) {
-      const sensorPose = this.getSensorPose();
+      const visualPose = this.getVisualPose();
       this.mesh.position.set(this.pose.translation.x, this.pose.translation.y, this.pose.translation.z);
-      this.mesh.rotationQuaternion = poseToQuaternion(sensorPose);
+      this.mesh.rotationQuaternion = poseToQuaternion(visualPose);
     }
   }
 
   getSensorPose(): Pose3dDto {
+    return {
+      translation: { ...this.pose.translation },
+      rotation: { ...this.pose.rotation },
+    };
+  }
+
+  getVisualPose(): Pose3dDto {
     return {
       translation: { ...this.pose.translation },
       rotation: {

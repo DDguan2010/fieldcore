@@ -15,6 +15,8 @@ export type GamePieceState =
 export class GamePieceObject extends BaseSimObject {
   state: GamePieceState = "FREE";
   contactStartedAtSeconds: number | null = null;
+  shotAtSeconds: number | null = null;
+  scoredAtSeconds: number | null = null;
 
   constructor(id: string, pose: Pose3dDto, mesh: Mesh, body?: PhysicsBody) {
     super(id, "game-piece", pose, { label: id }, mesh, body);

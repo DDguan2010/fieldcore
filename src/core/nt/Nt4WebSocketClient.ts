@@ -45,6 +45,7 @@ export class Nt4WebSocketClient implements NetworkTablesClient {
   private networkLatencyMicros = 0;
   private rttReconnectDelayMs = 500;
   private lastMainTimestampMs = 0;
+  private lastSentValueTimestampMicros = 0;
 
   async connect(config: NTConnectionConfig): Promise<void> {
     const connectionKey = configKey(config);
@@ -65,6 +66,7 @@ export class Nt4WebSocketClient implements NetworkTablesClient {
     this.topicNames.clear();
     this.serverTimeOffsetMicros = null;
     this.networkLatencyMicros = 0;
+    this.lastSentValueTimestampMicros = 0;
     if (this.reconnectTimer != null) {
       window.clearTimeout(this.reconnectTimer);
       this.reconnectTimer = null;
@@ -170,7 +172,23 @@ export class Nt4WebSocketClient implements NetworkTablesClient {
     this.retainedValues.set(topic, value);
     const type = typeStringForValue(value, topic);
     const pubuid = this.ensurePublisher(topic, value, type);
-    this.sendBinary([pubuid, this.getServerTimeMicros(), typeIdForType(type), payloadForType(value, type)]);
+    if (this.serverTimeOffsetMicros == null) {
+      // Before the first RTT completes, send timestamp 0 so the NT server accepts
+      // the frame immediately without comparing it against future server-time values.
+      // Using raw client epoch time here would poison the topic with a huge timestamp
+      // and freeze later properly-synced updates as "stale".
+      this.sendBinary([pubuid, 0, typeIdForType(type), payloadForType(value, type)]);
+      return;
+    }
+    this.sendBinary([pubuid, this.nextValueTimestampMicros(), typeIdForType(type), payloadForType(value, type)]);
+  }
+
+  private nextValueTimestampMicros() {
+    const timestamp = this.getServerTimeMicros();
+    // Keep outgoing value timestamps strictly monotonic so the server never
+    // discards a fresh frame as stale after small clock-offset re-estimates.
+    this.lastSentValueTimestampMicros = Math.max(timestamp, this.lastSentValueTimestampMicros + 1);
+    return this.lastSentValueTimestampMicros;
   }
 
   private ensurePublisher(topic: string, value: unknown, type: string): number {
@@ -360,7 +378,22 @@ export class Nt4WebSocketClient implements NetworkTablesClient {
     const receiveTimeMicros = this.getClientTimeMicros();
     const roundTripMicros = receiveTimeMicros - clientTimestampMicros;
     this.networkLatencyMicros = Math.max(0, roundTripMicros / 2);
+    const firstSync = this.serverTimeOffsetMicros == null;
     this.serverTimeOffsetMicros = serverTimestampMicros + this.networkLatencyMicros - receiveTimeMicros;
+    if (firstSync) {
+      // Server time is now known: release every value published while unsynced so
+      // subscribers (robot code, AdvantageScope) get live data instead of a single
+      // stale first frame.
+      this.flushRetainedValues();
+    }
+  }
+
+  private flushRetainedValues() {
+    for (const [topic, value] of this.retainedValues) {
+      const type = typeStringForValue(value, topic);
+      const pubuid = this.ensurePublisher(topic, value, type);
+      this.sendBinary([pubuid, this.nextValueTimestampMicros(), typeIdForType(type), payloadForType(value, type)]);
+    }
   }
 
   private getClientTimeMicros() {
@@ -428,14 +461,34 @@ const knownTopicTypes = new Map<string, string>([
   ["/FieldCore/Vision/DetectedTagIds", "int[]"],
   ["/FieldCore/Sim/TrueRobotPose", "double[]"],
   ["/FieldCore/Sim/GamePieceStates", "json"],
-  ["/limelight-a/botpose", "double[]"],
-  ["/limelight-a/botpose_wpiblue", "double[]"],
-  ["/limelight-a/botpose_orb_wpiblue", "double[]"],
-  ["/limelight-a/rawfiducials", "double[]"],
 ]);
 
+// Limelight-table topics must keep stable NT types regardless of the configured
+// table name, so robot-side NetworkTableEntry.getDouble/getDoubleArray reads match.
+const limelightDoubleArraySuffixes = ["/rawfiducials", "/rawdetections", "/t2d", "/hw", "/imu"];
+const limelightDoubleSuffixes = [
+  "/tv", "/tid", "/hb", "/tl", "/cl", "/ta", "/tx", "/ty",
+  "/botpose_tagcount", "/botpose_span", "/botpose_avgdist", "/botpose_avgarea",
+];
+
+function limelightTopicType(topic: string): string | undefined {
+  if (topic.includes("/botpose")) {
+    if (limelightDoubleSuffixes.some((suffix) => topic.endsWith(suffix))) {
+      return "double";
+    }
+    return "double[]";
+  }
+  if (limelightDoubleArraySuffixes.some((suffix) => topic.endsWith(suffix))) {
+    return "double[]";
+  }
+  if (limelightDoubleSuffixes.some((suffix) => topic.endsWith(suffix))) {
+    return "double";
+  }
+  return undefined;
+}
+
 function typeStringForValue(value: unknown, topic?: string): string {
-  const knownType = topic === undefined ? undefined : knownTopicTypes.get(topic);
+  const knownType = topic === undefined ? undefined : knownTopicTypes.get(topic) ?? limelightTopicType(topic);
   if (knownType !== undefined) return knownType;
   if (typeof value === "boolean") return "boolean";
   if (typeof value === "number") return "double";
