@@ -1,0 +1,249 @@
+- generic [ref=f1e3]:
+  - banner [ref=f1e4]:
+    - button "FC FieldCore FRC physics simulator" [ref=f1e5] [cursor=pointer]:
+      - generic [ref=f1e6]: FC
+      - generic [ref=f1e7]:
+        - strong [ref=f1e8]: FieldCore
+        - generic [ref=f1e9]: FRC physics simulator
+    - navigation [ref=f1e10]:
+      - button "Fields" [ref=f1e11] [cursor=pointer]
+      - button "Simulation" [ref=f1e12] [cursor=pointer]
+      - button "Docs" [ref=f1e13] [cursor=pointer]
+  - main [ref=f1e22]:
+    - generic [ref=f1e25]: scene.getPhysicsEngine is not a function
+    - complementary [ref=f1e26]:
+      - generic [ref=f1e27]:
+        - heading "Quick Actions" [level=3] [ref=f1e28]
+        - generic [ref=f1e29]:
+          - button "Connect NT" [ref=f1e30] [cursor=pointer]
+          - button "Reset Field" [ref=f1e31] [cursor=pointer]
+          - button "Reset Robot Pose" [ref=f1e32] [cursor=pointer]
+          - button "Spawn Game Piece" [ref=f1e33] [cursor=pointer]
+          - button "Clear Game Pieces" [ref=f1e34] [cursor=pointer]
+          - button "Toggle Intake" [ref=f1e35] [cursor=pointer]
+          - button "Fire Test Shot" [ref=f1e36] [cursor=pointer]
+          - button "Toggle Vision Noise" [ref=f1e37] [cursor=pointer]
+          - button "Pause Physics" [ref=f1e38] [cursor=pointer]
+          - button "Step Physics" [ref=f1e39] [cursor=pointer]
+      - generic [ref=f1e40]:
+        - heading "Connection" [level=3] [ref=f1e41]
+        - generic [ref=f1e42]:
+          - generic [ref=f1e43]:
+            - generic [ref=f1e44]: Host
+            - textbox [ref=f1e45]: localhost
+          - generic [ref=f1e46]:
+            - generic [ref=f1e47]: Port
+            - spinbutton [ref=f1e48]: "5810"
+          - generic [ref=f1e49]:
+            - generic [ref=f1e50]: Team Number
+            - spinbutton [ref=f1e51]: "0"
+          - generic [ref=f1e52]:
+            - generic [ref=f1e53]: Mode
+            - combobox [ref=f1e54]:
+              - option "local simulation" [selected]
+              - option "robot"
+          - button "Connect" [ref=f1e55] [cursor=pointer]
+          - button "Disconnect" [ref=f1e56] [cursor=pointer]
+      - generic [ref=f1e57]:
+        - heading "Robot Config" [level=3] [ref=f1e58]
+        - generic [ref=f1e59]:
+          - generic [ref=f1e60]:
+            - generic [ref=f1e61]: Width (m)
+            - spinbutton [ref=f1e62]: "0.8"
+          - generic [ref=f1e63]:
+            - generic [ref=f1e64]: Length (m)
+            - spinbutton [ref=f1e65]: "0.9"
+          - generic [ref=f1e66]:
+            - generic [ref=f1e67]: Height (m)
+            - spinbutton [ref=f1e68]: "0.55"
+          - generic [ref=f1e69]:
+            - generic [ref=f1e70]: Mass (kg)
+            - spinbutton [ref=f1e71]: "52"
+          - generic [ref=f1e72]:
+            - generic [ref=f1e73]: Bumper Height (m)
+            - spinbutton [ref=f1e74]: "0.18"
+          - generic [ref=f1e75]:
+            - generic [ref=f1e76]: Color
+            - textbox [ref=f1e77]: "#9ccaff"
+      - generic [ref=f1e78]:
+        - heading "Intake Config" [level=3] [ref=f1e79]
+        - generic [ref=f1e80]:
+          - generic [ref=f1e81]:
+            - generic [ref=f1e82]: Enabled Topic
+            - textbox [ref=f1e83]: /FieldCore/Robot/IntakeEnabled
+          - generic [ref=f1e84]:
+            - generic [ref=f1e85]: Width (m)
+            - spinbutton [ref=f1e86]: "0.7"
+          - generic [ref=f1e87]:
+            - generic [ref=f1e88]: Length (m)
+            - spinbutton [ref=f1e89]: "0.22"
+          - generic [ref=f1e90]:
+            - generic [ref=f1e91]: Height (m)
+            - spinbutton [ref=f1e92]: "0.22"
+          - generic [ref=f1e93]:
+            - generic [ref=f1e94]: Offset X (m)
+            - spinbutton [ref=f1e95]: "0"
+          - generic [ref=f1e96]:
+            - generic [ref=f1e97]: Offset Y (m)
+            - spinbutton [ref=f1e98]: "0.05"
+          - generic [ref=f1e99]:
+            - generic [ref=f1e100]: Offset Z (m)
+            - spinbutton [ref=f1e101]: "0.55"
+          - generic [ref=f1e102]:
+            - generic [ref=f1e103]: Capture Delay (s)
+            - spinbutton [ref=f1e104]: "0.2"
+          - generic [ref=f1e105]:
+            - generic [ref=f1e106]: Max Held Count
+            - spinbutton [ref=f1e107]: "1"
+      - generic [ref=f1e108]:
+        - heading "Shooter Config" [level=3] [ref=f1e109]
+        - generic [ref=f1e110]:
+          - generic [ref=f1e111]:
+            - generic [ref=f1e112]: Enabled Topic
+            - textbox [ref=f1e113]: /FieldCore/Robot/ShooterEnabled
+          - generic [ref=f1e114]:
+            - generic [ref=f1e115]: Shoot Command Topic
+            - textbox [ref=f1e116]: /FieldCore/Robot/ShootCommand
+          - generic [ref=f1e117]:
+            - generic [ref=f1e118]: Base Speed (m/s)
+            - spinbutton [ref=f1e119]: "7"
+          - generic [ref=f1e120]:
+            - generic [ref=f1e121]: RPM Scale
+            - spinbutton [ref=f1e122]: "0.0015"
+          - generic [ref=f1e123]:
+            - generic [ref=f1e124]: Launch Angle Offset (deg)
+            - spinbutton [ref=f1e125]: "22"
+          - generic [ref=f1e126]:
+            - generic [ref=f1e127]: Spread Std Dev (deg)
+            - spinbutton [ref=f1e128]: "2"
+          - generic [ref=f1e129]:
+            - generic [ref=f1e130]: Latency (s)
+            - spinbutton [ref=f1e131]: "0.05"
+      - generic [ref=f1e132]:
+        - heading "Vision Config" [level=3] [ref=f1e133]
+        - generic [ref=f1e134]:
+          - generic [ref=f1e135]:
+            - generic [ref=f1e136]: Horizontal FOV (deg)
+            - spinbutton [ref=f1e137]: "70"
+          - generic [ref=f1e138]:
+            - generic [ref=f1e139]: Vertical FOV (deg)
+            - spinbutton [ref=f1e140]: "45"
+          - generic [ref=f1e141]:
+            - generic [ref=f1e142]: Max Distance (m)
+            - spinbutton [ref=f1e143]: "8"
+          - generic [ref=f1e144]:
+            - generic [ref=f1e145]: Latency Mean (s)
+            - spinbutton [ref=f1e146]: "0.035"
+          - generic [ref=f1e147]:
+            - generic [ref=f1e148]: Latency Std Dev (s)
+            - spinbutton [ref=f1e149]: "0.006"
+          - generic [ref=f1e150]:
+            - generic [ref=f1e151]: Position Noise (m)
+            - spinbutton [ref=f1e152]: "0.04"
+          - generic [ref=f1e153]:
+            - generic [ref=f1e154]: Rotation Noise (rad)
+            - spinbutton [ref=f1e155]: "0.025"
+          - generic [ref=f1e156]:
+            - generic [ref=f1e157]: Dropout Probability
+            - spinbutton [ref=f1e158]: "0.02"
+          - button "Noise On" [ref=f1e159] [cursor=pointer]
+      - generic [ref=f1e160]:
+        - heading "Game Pieces" [level=3] [ref=f1e161]
+        - button "Refresh" [ref=f1e162] [cursor=pointer]
+      - generic [ref=f1e163]:
+        - heading "NetworkTables Topics" [level=3] [ref=f1e164]
+        - generic [ref=f1e165]:
+          - heading "Robot -> FieldCore" [level=4] [ref=f1e166]
+          - generic [ref=f1e167]:
+            - generic [ref=f1e168]: enabled
+            - textbox [ref=f1e169]: /FieldCore/Robot/Enabled
+          - generic [ref=f1e170]:
+            - generic [ref=f1e171]: mode
+            - textbox [ref=f1e172]: /FieldCore/Robot/Mode
+          - generic [ref=f1e173]:
+            - generic [ref=f1e174]: poseEstimate
+            - textbox [ref=f1e175]: /FieldCore/Robot/PoseEstimate
+          - generic [ref=f1e176]:
+            - generic [ref=f1e177]: chassisSpeeds
+            - textbox [ref=f1e178]: /FieldCore/Robot/ChassisSpeeds
+          - generic [ref=f1e179]:
+            - generic [ref=f1e180]: moduleStates
+            - textbox [ref=f1e181]: /FieldCore/Robot/ModuleStates
+          - generic [ref=f1e182]:
+            - generic [ref=f1e183]: intakeEnabled
+            - textbox [ref=f1e184]: /FieldCore/Robot/IntakeEnabled
+          - generic [ref=f1e185]:
+            - generic [ref=f1e186]: shooterEnabled
+            - textbox [ref=f1e187]: /FieldCore/Robot/ShooterEnabled
+          - generic [ref=f1e188]:
+            - generic [ref=f1e189]: shooterRPM
+            - textbox [ref=f1e190]: /FieldCore/Robot/ShooterRPM
+          - generic [ref=f1e191]:
+            - generic [ref=f1e192]: hoodAngleDeg
+            - textbox [ref=f1e193]: /FieldCore/Robot/HoodAngleDeg
+          - generic [ref=f1e194]:
+            - generic [ref=f1e195]: shootCommand
+            - textbox [ref=f1e196]: /FieldCore/Robot/ShootCommand
+        - generic [ref=f1e197]:
+          - heading "FieldCore -> Robot" [level=4] [ref=f1e198]
+          - generic [ref=f1e199]:
+            - generic [ref=f1e200]: hasTarget
+            - textbox [ref=f1e201]: /FieldCore/Vision/HasTarget
+          - generic [ref=f1e202]:
+            - generic [ref=f1e203]: pose
+            - textbox [ref=f1e204]: /FieldCore/Vision/Pose
+          - generic [ref=f1e205]:
+            - generic [ref=f1e206]: timestampSeconds
+            - textbox [ref=f1e207]: /FieldCore/Vision/TimestampSeconds
+          - generic [ref=f1e208]:
+            - generic [ref=f1e209]: latencySeconds
+            - textbox [ref=f1e210]: /FieldCore/Vision/LatencySeconds
+          - generic [ref=f1e211]:
+            - generic [ref=f1e212]: reliability
+            - textbox [ref=f1e213]: /FieldCore/Vision/Reliability
+          - generic [ref=f1e214]:
+            - generic [ref=f1e215]: detectedTagIds
+            - textbox [ref=f1e216]: /FieldCore/Vision/DetectedTagIds
+          - generic [ref=f1e217]:
+            - generic [ref=f1e218]: tagSpan
+            - textbox [ref=f1e219]: /FieldCore/Vision/TagSpan
+          - generic [ref=f1e220]:
+            - generic [ref=f1e221]: avgTagDist
+            - textbox [ref=f1e222]: /FieldCore/Vision/AvgTagDist
+          - generic [ref=f1e223]:
+            - generic [ref=f1e224]: avgTagArea
+            - textbox [ref=f1e225]: /FieldCore/Vision/AvgTagArea
+          - generic [ref=f1e226]:
+            - generic [ref=f1e227]: status
+            - textbox [ref=f1e228]: /FieldCore/Vision/Status
+          - generic [ref=f1e229]:
+            - generic [ref=f1e230]: lastHeartbeat
+            - textbox [ref=f1e231]: /FieldCore/Vision/LastHeartbeat
+          - generic [ref=f1e232]:
+            - generic [ref=f1e233]: lastTsBootMs
+            - textbox [ref=f1e234]: /FieldCore/Vision/LastTsBootMs
+          - generic [ref=f1e235]:
+            - generic [ref=f1e236]: lastSeenTime
+            - textbox [ref=f1e237]: /FieldCore/Vision/LastSeenTime
+          - generic [ref=f1e238]:
+            - generic [ref=f1e239]: temperature
+            - textbox [ref=f1e240]: /FieldCore/Vision/Temperature
+        - generic [ref=f1e241]:
+          - heading "Debug Only" [level=4] [ref=f1e242]
+          - generic [ref=f1e243]:
+            - generic [ref=f1e244]: trueRobotPose
+            - textbox [ref=f1e245]: /FieldCore/Sim/TrueRobotPose
+          - generic [ref=f1e246]:
+            - generic [ref=f1e247]: gamePieceStates
+            - textbox [ref=f1e248]: /FieldCore/Sim/GamePieceStates
+    - generic [ref=f1e249]:
+      - generic [ref=f1e250]: NT disconnected
+      - generic [ref=f1e251]: Robot x 0.00 m
+      - generic [ref=f1e252]: Robot z 0.00 m
+      - generic [ref=f1e253]: Vision NO_TARGET
+      - generic [ref=f1e254]: Reliability 0.00
+      - generic [ref=f1e255]: Held 0
+      - generic [ref=f1e256]: Pieces 0
+      - generic [ref=f1e257]: Render FPS 0
+      - generic [ref=f1e258]: Physics FPS 0
+      - generic [ref=f1e259]: Running

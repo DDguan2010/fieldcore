@@ -1,0 +1,997 @@
+{
+  "sourceNote": "Imported from AdvantageScope Field3d_2026FRCFieldV1 config, which mirrors FIRST 2026 AprilTag layout. Positions are center/red field coordinates in meters.",
+  "targets": [
+    {
+      "id": 1,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        -3.607,
+        -3.39,
+        0.889
+      ],
+      "pose": {
+        "translation": {
+          "x": -3.607,
+          "y": 0.889,
+          "z": -3.39
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 2,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 270
+        }
+      ],
+      "position": [
+        -3.645,
+        -0.604,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": -3.645,
+          "y": 1.124,
+          "z": -0.604
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 4.71238898038469
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 3,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        -3.041,
+        -0.356,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": -3.041,
+          "y": 1.124,
+          "z": -0.356
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 4,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        -3.041,
+        0,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": -3.041,
+          "y": 1.124,
+          "z": 0
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 5,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 90
+        }
+      ],
+      "position": [
+        -3.645,
+        0.604,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": -3.645,
+          "y": 1.124,
+          "z": 0.604
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 6,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        -3.607,
+        3.39,
+        0.889
+      ],
+      "pose": {
+        "translation": {
+          "x": -3.607,
+          "y": 0.889,
+          "z": 3.39
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 7,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        -3.683,
+        3.39,
+        0.889
+      ],
+      "pose": {
+        "translation": {
+          "x": -3.683,
+          "y": 0.889,
+          "z": 3.39
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 8,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 90
+        }
+      ],
+      "position": [
+        -4.001,
+        0.604,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": -4.001,
+          "y": 1.124,
+          "z": 0.604
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 9,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        -4.249,
+        0.355,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": -4.249,
+          "y": 1.124,
+          "z": 0.355
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 10,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        -4.249,
+        0,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": -4.249,
+          "y": 1.124,
+          "z": 0
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 11,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 270
+        }
+      ],
+      "position": [
+        -4.001,
+        -0.604,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": -4.001,
+          "y": 1.124,
+          "z": -0.604
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 4.71238898038469
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 12,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        -3.683,
+        -3.39,
+        0.889
+      ],
+      "pose": {
+        "translation": {
+          "x": -3.683,
+          "y": 0.889,
+          "z": -3.39
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 13,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        -8.262,
+        -3.369,
+        0.552
+      ],
+      "pose": {
+        "translation": {
+          "x": -8.262,
+          "y": 0.552,
+          "z": -3.369
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 14,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        -8.262,
+        -2.937,
+        0.552
+      ],
+      "pose": {
+        "translation": {
+          "x": -8.262,
+          "y": 0.552,
+          "z": -2.937
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 15,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        -8.262,
+        -0.289,
+        0.552
+      ],
+      "pose": {
+        "translation": {
+          "x": -8.262,
+          "y": 0.552,
+          "z": -0.289
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 16,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        -8.262,
+        0.143,
+        0.552
+      ],
+      "pose": {
+        "translation": {
+          "x": -8.262,
+          "y": 0.552,
+          "z": 0.143
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 17,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        3.607,
+        3.39,
+        0.889
+      ],
+      "pose": {
+        "translation": {
+          "x": 3.607,
+          "y": 0.889,
+          "z": 3.39
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 18,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 90
+        }
+      ],
+      "position": [
+        3.645,
+        0.604,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": 3.645,
+          "y": 1.124,
+          "z": 0.604
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 19,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        3.041,
+        0.355,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": 3.041,
+          "y": 1.124,
+          "z": 0.355
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 20,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        3.041,
+        0,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": 3.041,
+          "y": 1.124,
+          "z": 0
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 21,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 270
+        }
+      ],
+      "position": [
+        3.645,
+        -0.604,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": 3.645,
+          "y": 1.124,
+          "z": -0.604
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 4.71238898038469
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 22,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        3.607,
+        -3.39,
+        0.889
+      ],
+      "pose": {
+        "translation": {
+          "x": 3.607,
+          "y": 0.889,
+          "z": -3.39
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 23,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        3.683,
+        -3.39,
+        0.889
+      ],
+      "pose": {
+        "translation": {
+          "x": 3.683,
+          "y": 0.889,
+          "z": -3.39
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 24,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 270
+        }
+      ],
+      "position": [
+        4,
+        -0.604,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": 4,
+          "y": 1.124,
+          "z": -0.604
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 4.71238898038469
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 25,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        4.249,
+        -0.356,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": 4.249,
+          "y": 1.124,
+          "z": -0.356
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 26,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        4.249,
+        0,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": 4.249,
+          "y": 1.124,
+          "z": 0
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 27,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 90
+        }
+      ],
+      "position": [
+        4,
+        0.604,
+        1.124
+      ],
+      "pose": {
+        "translation": {
+          "x": 4,
+          "y": 1.124,
+          "z": 0.604
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 28,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 0
+        }
+      ],
+      "position": [
+        3.683,
+        3.39,
+        0.889
+      ],
+      "pose": {
+        "translation": {
+          "x": 3.683,
+          "y": 0.889,
+          "z": 3.39
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 0
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 29,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        8.262,
+        3.369,
+        0.552
+      ],
+      "pose": {
+        "translation": {
+          "x": 8.262,
+          "y": 0.552,
+          "z": 3.369
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 30,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        8.262,
+        2.937,
+        0.552
+      ],
+      "pose": {
+        "translation": {
+          "x": 8.262,
+          "y": 0.552,
+          "z": 2.937
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 31,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        8.262,
+        0.289,
+        0.552
+      ],
+      "pose": {
+        "translation": {
+          "x": 8.262,
+          "y": 0.552,
+          "z": 0.289
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    },
+    {
+      "id": 32,
+      "variant": "36h11-6.5in",
+      "rotations": [
+        {
+          "axis": "z",
+          "degrees": 180
+        }
+      ],
+      "position": [
+        8.262,
+        -0.143,
+        0.552
+      ],
+      "pose": {
+        "translation": {
+          "x": 8.262,
+          "y": 0.552,
+          "z": -0.143
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 3.141592653589793
+        }
+      },
+      "sizeMeters": {
+        "width": 0.1651,
+        "height": 0.1651
+      }
+    }
+  ]
+}

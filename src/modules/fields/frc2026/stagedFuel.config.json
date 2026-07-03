@@ -1,0 +1,7306 @@
+{
+  "sourceNote": "Generated from the official AdvantageScope Field3d_2026FRCFieldV1 field.glb staged Fuel nodes. Coordinates are FieldCore meters: x field length, y vertical, z field width.",
+  "sourceAsset": "public/assets/fields/frc2026/field.glb",
+  "coordinateSystem": "fieldcore-centered-meters",
+  "gamePieceDiameterMeters": 0.15,
+  "gamePieceRadiusMeters": 0.075,
+  "count": 456,
+  "pieces": [
+    {
+      "id": "fuel-001",
+      "sourceNodeIndex": 1,
+      "pose": {
+        "translation": {
+          "x": 8.041926,
+          "y": 0.075,
+          "z": 2.0066
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-002",
+      "sourceNodeIndex": 2,
+      "pose": {
+        "translation": {
+          "x": 8.781931,
+          "y": 0.927413,
+          "z": -3.673475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-003",
+      "sourceNodeIndex": 3,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-004",
+      "sourceNodeIndex": 4,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-005",
+      "sourceNodeIndex": 5,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-006",
+      "sourceNodeIndex": 6,
+      "pose": {
+        "translation": {
+          "x": 8.194326,
+          "y": 0.075,
+          "z": 2.3114
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-007",
+      "sourceNodeIndex": 7,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-008",
+      "sourceNodeIndex": 8,
+      "pose": {
+        "translation": {
+          "x": 8.634724,
+          "y": 0.887969,
+          "z": -3.063875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-009",
+      "sourceNodeIndex": 9,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-010",
+      "sourceNodeIndex": 10,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-011",
+      "sourceNodeIndex": 11,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-012",
+      "sourceNodeIndex": 12,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-013",
+      "sourceNodeIndex": 13,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-014",
+      "sourceNodeIndex": 14,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-015",
+      "sourceNodeIndex": 15,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-016",
+      "sourceNodeIndex": 17,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-017",
+      "sourceNodeIndex": 18,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-018",
+      "sourceNodeIndex": 19,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-019",
+      "sourceNodeIndex": 20,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-020",
+      "sourceNodeIndex": 21,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-021",
+      "sourceNodeIndex": 22,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-022",
+      "sourceNodeIndex": 23,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-023",
+      "sourceNodeIndex": 24,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-024",
+      "sourceNodeIndex": 25,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-025",
+      "sourceNodeIndex": 26,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-026",
+      "sourceNodeIndex": 27,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-027",
+      "sourceNodeIndex": 28,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-028",
+      "sourceNodeIndex": 29,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-029",
+      "sourceNodeIndex": 30,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-030",
+      "sourceNodeIndex": 31,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-031",
+      "sourceNodeIndex": 32,
+      "pose": {
+        "translation": {
+          "x": -8.909413,
+          "y": 0.961572,
+          "z": 3.140075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-032",
+      "sourceNodeIndex": 33,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-033",
+      "sourceNodeIndex": 34,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-034",
+      "sourceNodeIndex": 35,
+      "pose": {
+        "translation": {
+          "x": -7.737126,
+          "y": 0.075,
+          "z": -1.8542
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-035",
+      "sourceNodeIndex": 36,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-036",
+      "sourceNodeIndex": 37,
+      "pose": {
+        "translation": {
+          "x": -8.041926,
+          "y": 0.075,
+          "z": -1.7018
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-037",
+      "sourceNodeIndex": 38,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-038",
+      "sourceNodeIndex": 39,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-039",
+      "sourceNodeIndex": 40,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-040",
+      "sourceNodeIndex": 42,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-041",
+      "sourceNodeIndex": 43,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-042",
+      "sourceNodeIndex": 44,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-043",
+      "sourceNodeIndex": 45,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-044",
+      "sourceNodeIndex": 46,
+      "pose": {
+        "translation": {
+          "x": -8.041926,
+          "y": 0.075,
+          "z": -2.3114
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-045",
+      "sourceNodeIndex": 47,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-046",
+      "sourceNodeIndex": 48,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-047",
+      "sourceNodeIndex": 50,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-048",
+      "sourceNodeIndex": 51,
+      "pose": {
+        "translation": {
+          "x": 8.34031,
+          "y": 0.809081,
+          "z": -3.368675
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-049",
+      "sourceNodeIndex": 52,
+      "pose": {
+        "translation": {
+          "x": -7.889526,
+          "y": 0.075,
+          "z": -1.8542
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-050",
+      "sourceNodeIndex": 53,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-051",
+      "sourceNodeIndex": 54,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-052",
+      "sourceNodeIndex": 55,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-053",
+      "sourceNodeIndex": 56,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-054",
+      "sourceNodeIndex": 57,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-055",
+      "sourceNodeIndex": 58,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-056",
+      "sourceNodeIndex": 59,
+      "pose": {
+        "translation": {
+          "x": 8.194326,
+          "y": 0.075,
+          "z": 2.159
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-057",
+      "sourceNodeIndex": 60,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-058",
+      "sourceNodeIndex": 61,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-059",
+      "sourceNodeIndex": 62,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-060",
+      "sourceNodeIndex": 63,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-061",
+      "sourceNodeIndex": 64,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-062",
+      "sourceNodeIndex": 65,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-063",
+      "sourceNodeIndex": 66,
+      "pose": {
+        "translation": {
+          "x": -8.487517,
+          "y": 0.848525,
+          "z": 3.673475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-064",
+      "sourceNodeIndex": 67,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-065",
+      "sourceNodeIndex": 68,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-066",
+      "sourceNodeIndex": 69,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-067",
+      "sourceNodeIndex": 70,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-068",
+      "sourceNodeIndex": 72,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-069",
+      "sourceNodeIndex": 73,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-070",
+      "sourceNodeIndex": 74,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-071",
+      "sourceNodeIndex": 75,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-072",
+      "sourceNodeIndex": 76,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-073",
+      "sourceNodeIndex": 77,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-074",
+      "sourceNodeIndex": 78,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-075",
+      "sourceNodeIndex": 79,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-076",
+      "sourceNodeIndex": 80,
+      "pose": {
+        "translation": {
+          "x": 8.34031,
+          "y": 0.809081,
+          "z": -3.216275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-077",
+      "sourceNodeIndex": 81,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-078",
+      "sourceNodeIndex": 82,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-079",
+      "sourceNodeIndex": 83,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-080",
+      "sourceNodeIndex": 84,
+      "pose": {
+        "translation": {
+          "x": -8.909413,
+          "y": 0.961572,
+          "z": 3.292475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-081",
+      "sourceNodeIndex": 85,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-082",
+      "sourceNodeIndex": 86,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-083",
+      "sourceNodeIndex": 87,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-084",
+      "sourceNodeIndex": 88,
+      "pose": {
+        "translation": {
+          "x": -7.737126,
+          "y": 0.075,
+          "z": -2.0066
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-085",
+      "sourceNodeIndex": 89,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-086",
+      "sourceNodeIndex": 90,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-087",
+      "sourceNodeIndex": 91,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-088",
+      "sourceNodeIndex": 92,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-089",
+      "sourceNodeIndex": 93,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-090",
+      "sourceNodeIndex": 94,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-091",
+      "sourceNodeIndex": 95,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-092",
+      "sourceNodeIndex": 97,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-093",
+      "sourceNodeIndex": 98,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-094",
+      "sourceNodeIndex": 100,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-095",
+      "sourceNodeIndex": 101,
+      "pose": {
+        "translation": {
+          "x": 7.737126,
+          "y": 0.075,
+          "z": 1.8542
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-096",
+      "sourceNodeIndex": 102,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-097",
+      "sourceNodeIndex": 103,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-098",
+      "sourceNodeIndex": 104,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-099",
+      "sourceNodeIndex": 105,
+      "pose": {
+        "translation": {
+          "x": -8.781931,
+          "y": 0.927413,
+          "z": 3.368675
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-100",
+      "sourceNodeIndex": 106,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-101",
+      "sourceNodeIndex": 107,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-102",
+      "sourceNodeIndex": 108,
+      "pose": {
+        "translation": {
+          "x": -8.34031,
+          "y": 0.809081,
+          "z": 3.216275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-103",
+      "sourceNodeIndex": 109,
+      "pose": {
+        "translation": {
+          "x": 8.041926,
+          "y": 0.075,
+          "z": 2.159
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-104",
+      "sourceNodeIndex": 110,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-105",
+      "sourceNodeIndex": 111,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-106",
+      "sourceNodeIndex": 112,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-107",
+      "sourceNodeIndex": 113,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-108",
+      "sourceNodeIndex": 114,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-109",
+      "sourceNodeIndex": 115,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-110",
+      "sourceNodeIndex": 116,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-111",
+      "sourceNodeIndex": 117,
+      "pose": {
+        "translation": {
+          "x": -8.041926,
+          "y": 0.075,
+          "z": -2.0066
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-112",
+      "sourceNodeIndex": 118,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-113",
+      "sourceNodeIndex": 119,
+      "pose": {
+        "translation": {
+          "x": -8.34031,
+          "y": 0.809081,
+          "z": 3.521075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-114",
+      "sourceNodeIndex": 120,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-115",
+      "sourceNodeIndex": 121,
+      "pose": {
+        "translation": {
+          "x": 8.34031,
+          "y": 0.809081,
+          "z": -3.063875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-116",
+      "sourceNodeIndex": 122,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-117",
+      "sourceNodeIndex": 123,
+      "pose": {
+        "translation": {
+          "x": 8.487517,
+          "y": 0.848525,
+          "z": -3.368675
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-118",
+      "sourceNodeIndex": 124,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-119",
+      "sourceNodeIndex": 125,
+      "pose": {
+        "translation": {
+          "x": -7.889526,
+          "y": 0.075,
+          "z": -2.0066
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-120",
+      "sourceNodeIndex": 126,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-121",
+      "sourceNodeIndex": 127,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-122",
+      "sourceNodeIndex": 128,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-123",
+      "sourceNodeIndex": 129,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-124",
+      "sourceNodeIndex": 130,
+      "pose": {
+        "translation": {
+          "x": 7.737126,
+          "y": 0.075,
+          "z": 2.159
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-125",
+      "sourceNodeIndex": 131,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-126",
+      "sourceNodeIndex": 132,
+      "pose": {
+        "translation": {
+          "x": -7.889526,
+          "y": 0.075,
+          "z": -2.159
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-127",
+      "sourceNodeIndex": 133,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-128",
+      "sourceNodeIndex": 134,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-129",
+      "sourceNodeIndex": 135,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-130",
+      "sourceNodeIndex": 136,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-131",
+      "sourceNodeIndex": 137,
+      "pose": {
+        "translation": {
+          "x": -8.909413,
+          "y": 0.961572,
+          "z": 3.444875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-132",
+      "sourceNodeIndex": 138,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-133",
+      "sourceNodeIndex": 139,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-134",
+      "sourceNodeIndex": 140,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-135",
+      "sourceNodeIndex": 141,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-136",
+      "sourceNodeIndex": 142,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-137",
+      "sourceNodeIndex": 143,
+      "pose": {
+        "translation": {
+          "x": -7.889526,
+          "y": 0.075,
+          "z": -2.3114
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-138",
+      "sourceNodeIndex": 144,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-139",
+      "sourceNodeIndex": 145,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-140",
+      "sourceNodeIndex": 146,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-141",
+      "sourceNodeIndex": 147,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-142",
+      "sourceNodeIndex": 148,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-143",
+      "sourceNodeIndex": 149,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-144",
+      "sourceNodeIndex": 150,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-145",
+      "sourceNodeIndex": 151,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-146",
+      "sourceNodeIndex": 152,
+      "pose": {
+        "translation": {
+          "x": -8.634724,
+          "y": 0.887969,
+          "z": 3.063875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-147",
+      "sourceNodeIndex": 153,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-148",
+      "sourceNodeIndex": 154,
+      "pose": {
+        "translation": {
+          "x": 8.909413,
+          "y": 0.961572,
+          "z": -3.292475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-149",
+      "sourceNodeIndex": 155,
+      "pose": {
+        "translation": {
+          "x": 8.487517,
+          "y": 0.848525,
+          "z": -3.063875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-150",
+      "sourceNodeIndex": 156,
+      "pose": {
+        "translation": {
+          "x": -8.34031,
+          "y": 0.809081,
+          "z": 3.368675
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-151",
+      "sourceNodeIndex": 157,
+      "pose": {
+        "translation": {
+          "x": 8.041926,
+          "y": 0.075,
+          "z": 1.7018
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-152",
+      "sourceNodeIndex": 158,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-153",
+      "sourceNodeIndex": 159,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-154",
+      "sourceNodeIndex": 160,
+      "pose": {
+        "translation": {
+          "x": 8.781931,
+          "y": 0.927413,
+          "z": -3.216275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-155",
+      "sourceNodeIndex": 161,
+      "pose": {
+        "translation": {
+          "x": -8.781931,
+          "y": 0.927413,
+          "z": 3.063875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-156",
+      "sourceNodeIndex": 162,
+      "pose": {
+        "translation": {
+          "x": -8.487517,
+          "y": 0.848525,
+          "z": 3.521075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-157",
+      "sourceNodeIndex": 163,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-158",
+      "sourceNodeIndex": 164,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-159",
+      "sourceNodeIndex": 165,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-160",
+      "sourceNodeIndex": 166,
+      "pose": {
+        "translation": {
+          "x": -7.737126,
+          "y": 0.075,
+          "z": -2.159
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-161",
+      "sourceNodeIndex": 167,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-162",
+      "sourceNodeIndex": 168,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-163",
+      "sourceNodeIndex": 169,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-164",
+      "sourceNodeIndex": 170,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-165",
+      "sourceNodeIndex": 171,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-166",
+      "sourceNodeIndex": 172,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-167",
+      "sourceNodeIndex": 173,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-168",
+      "sourceNodeIndex": 174,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-169",
+      "sourceNodeIndex": 175,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-170",
+      "sourceNodeIndex": 176,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-171",
+      "sourceNodeIndex": 177,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-172",
+      "sourceNodeIndex": 178,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-173",
+      "sourceNodeIndex": 179,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-174",
+      "sourceNodeIndex": 180,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-175",
+      "sourceNodeIndex": 181,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-176",
+      "sourceNodeIndex": 182,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-177",
+      "sourceNodeIndex": 183,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-178",
+      "sourceNodeIndex": 184,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-179",
+      "sourceNodeIndex": 185,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-180",
+      "sourceNodeIndex": 186,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-181",
+      "sourceNodeIndex": 187,
+      "pose": {
+        "translation": {
+          "x": -8.781931,
+          "y": 0.927413,
+          "z": 3.673475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-182",
+      "sourceNodeIndex": 188,
+      "pose": {
+        "translation": {
+          "x": -8.781931,
+          "y": 0.927413,
+          "z": 3.216275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-183",
+      "sourceNodeIndex": 189,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-184",
+      "sourceNodeIndex": 190,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-185",
+      "sourceNodeIndex": 191,
+      "pose": {
+        "translation": {
+          "x": -8.194326,
+          "y": 0.075,
+          "z": -2.0066
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-186",
+      "sourceNodeIndex": 192,
+      "pose": {
+        "translation": {
+          "x": -7.737126,
+          "y": 0.075,
+          "z": -1.7018
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-187",
+      "sourceNodeIndex": 193,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-188",
+      "sourceNodeIndex": 194,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-189",
+      "sourceNodeIndex": 195,
+      "pose": {
+        "translation": {
+          "x": 8.634724,
+          "y": 0.887969,
+          "z": -3.216275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-190",
+      "sourceNodeIndex": 196,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-191",
+      "sourceNodeIndex": 197,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-192",
+      "sourceNodeIndex": 198,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-193",
+      "sourceNodeIndex": 199,
+      "pose": {
+        "translation": {
+          "x": 8.909413,
+          "y": 0.961572,
+          "z": -3.140075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-194",
+      "sourceNodeIndex": 200,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-195",
+      "sourceNodeIndex": 201,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-196",
+      "sourceNodeIndex": 202,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-197",
+      "sourceNodeIndex": 203,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-198",
+      "sourceNodeIndex": 204,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-199",
+      "sourceNodeIndex": 205,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-200",
+      "sourceNodeIndex": 206,
+      "pose": {
+        "translation": {
+          "x": -7.889526,
+          "y": 0.075,
+          "z": -1.7018
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-201",
+      "sourceNodeIndex": 207,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-202",
+      "sourceNodeIndex": 209,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-203",
+      "sourceNodeIndex": 210,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-204",
+      "sourceNodeIndex": 211,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-205",
+      "sourceNodeIndex": 212,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-206",
+      "sourceNodeIndex": 213,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-207",
+      "sourceNodeIndex": 214,
+      "pose": {
+        "translation": {
+          "x": -8.194326,
+          "y": 0.075,
+          "z": -1.5494
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-208",
+      "sourceNodeIndex": 215,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-209",
+      "sourceNodeIndex": 216,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-210",
+      "sourceNodeIndex": 218,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-211",
+      "sourceNodeIndex": 219,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-212",
+      "sourceNodeIndex": 220,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-213",
+      "sourceNodeIndex": 221,
+      "pose": {
+        "translation": {
+          "x": 8.34031,
+          "y": 0.809081,
+          "z": -3.521075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-214",
+      "sourceNodeIndex": 222,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-215",
+      "sourceNodeIndex": 223,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-216",
+      "sourceNodeIndex": 225,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-217",
+      "sourceNodeIndex": 226,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-218",
+      "sourceNodeIndex": 227,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-219",
+      "sourceNodeIndex": 228,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-220",
+      "sourceNodeIndex": 229,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-221",
+      "sourceNodeIndex": 230,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-222",
+      "sourceNodeIndex": 231,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-223",
+      "sourceNodeIndex": 232,
+      "pose": {
+        "translation": {
+          "x": -8.194326,
+          "y": 0.075,
+          "z": -1.7018
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-224",
+      "sourceNodeIndex": 233,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-225",
+      "sourceNodeIndex": 234,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-226",
+      "sourceNodeIndex": 235,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-227",
+      "sourceNodeIndex": 236,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-228",
+      "sourceNodeIndex": 237,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-229",
+      "sourceNodeIndex": 238,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-230",
+      "sourceNodeIndex": 239,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-231",
+      "sourceNodeIndex": 240,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-232",
+      "sourceNodeIndex": 241,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-233",
+      "sourceNodeIndex": 242,
+      "pose": {
+        "translation": {
+          "x": -7.737126,
+          "y": 0.075,
+          "z": -2.3114
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-234",
+      "sourceNodeIndex": 243,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-235",
+      "sourceNodeIndex": 244,
+      "pose": {
+        "translation": {
+          "x": 8.34031,
+          "y": 0.809081,
+          "z": -3.673475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-236",
+      "sourceNodeIndex": 245,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-237",
+      "sourceNodeIndex": 246,
+      "pose": {
+        "translation": {
+          "x": 7.889526,
+          "y": 0.075,
+          "z": 2.0066
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-238",
+      "sourceNodeIndex": 247,
+      "pose": {
+        "translation": {
+          "x": 8.781931,
+          "y": 0.927413,
+          "z": -3.521075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-239",
+      "sourceNodeIndex": 248,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-240",
+      "sourceNodeIndex": 249,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-241",
+      "sourceNodeIndex": 250,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-242",
+      "sourceNodeIndex": 251,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-243",
+      "sourceNodeIndex": 252,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-244",
+      "sourceNodeIndex": 253,
+      "pose": {
+        "translation": {
+          "x": 7.737126,
+          "y": 0.075,
+          "z": 1.7018
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-245",
+      "sourceNodeIndex": 254,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-246",
+      "sourceNodeIndex": 255,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-247",
+      "sourceNodeIndex": 256,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-248",
+      "sourceNodeIndex": 257,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-249",
+      "sourceNodeIndex": 258,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-250",
+      "sourceNodeIndex": 259,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-251",
+      "sourceNodeIndex": 260,
+      "pose": {
+        "translation": {
+          "x": 8.194326,
+          "y": 0.075,
+          "z": 1.7018
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-252",
+      "sourceNodeIndex": 261,
+      "pose": {
+        "translation": {
+          "x": -7.737126,
+          "y": 0.075,
+          "z": -1.5494
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-253",
+      "sourceNodeIndex": 262,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-254",
+      "sourceNodeIndex": 263,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-255",
+      "sourceNodeIndex": 264,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-256",
+      "sourceNodeIndex": 265,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-257",
+      "sourceNodeIndex": 266,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-258",
+      "sourceNodeIndex": 268,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-259",
+      "sourceNodeIndex": 269,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-260",
+      "sourceNodeIndex": 270,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-261",
+      "sourceNodeIndex": 271,
+      "pose": {
+        "translation": {
+          "x": -8.041926,
+          "y": 0.075,
+          "z": -1.5494
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-262",
+      "sourceNodeIndex": 272,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-263",
+      "sourceNodeIndex": 274,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-264",
+      "sourceNodeIndex": 275,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-265",
+      "sourceNodeIndex": 276,
+      "pose": {
+        "translation": {
+          "x": -8.34031,
+          "y": 0.809081,
+          "z": 3.673475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-266",
+      "sourceNodeIndex": 277,
+      "pose": {
+        "translation": {
+          "x": 8.634724,
+          "y": 0.887969,
+          "z": -3.673475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-267",
+      "sourceNodeIndex": 278,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-268",
+      "sourceNodeIndex": 279,
+      "pose": {
+        "translation": {
+          "x": -8.194326,
+          "y": 0.075,
+          "z": -2.159
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-269",
+      "sourceNodeIndex": 280,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-270",
+      "sourceNodeIndex": 281,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-271",
+      "sourceNodeIndex": 282,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-272",
+      "sourceNodeIndex": 283,
+      "pose": {
+        "translation": {
+          "x": 8.487517,
+          "y": 0.848525,
+          "z": -3.673475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-273",
+      "sourceNodeIndex": 284,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-274",
+      "sourceNodeIndex": 285,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-275",
+      "sourceNodeIndex": 286,
+      "pose": {
+        "translation": {
+          "x": 8.909413,
+          "y": 0.961572,
+          "z": -3.597275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-276",
+      "sourceNodeIndex": 287,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-277",
+      "sourceNodeIndex": 288,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-278",
+      "sourceNodeIndex": 289,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-279",
+      "sourceNodeIndex": 290,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-280",
+      "sourceNodeIndex": 291,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-281",
+      "sourceNodeIndex": 292,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-282",
+      "sourceNodeIndex": 293,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-283",
+      "sourceNodeIndex": 294,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-284",
+      "sourceNodeIndex": 295,
+      "pose": {
+        "translation": {
+          "x": -8.781931,
+          "y": 0.927413,
+          "z": 3.521075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-285",
+      "sourceNodeIndex": 296,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-286",
+      "sourceNodeIndex": 297,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-287",
+      "sourceNodeIndex": 298,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-288",
+      "sourceNodeIndex": 299,
+      "pose": {
+        "translation": {
+          "x": 8.194326,
+          "y": 0.075,
+          "z": 1.5494
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-289",
+      "sourceNodeIndex": 300,
+      "pose": {
+        "translation": {
+          "x": 8.909413,
+          "y": 0.961572,
+          "z": -3.444875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-290",
+      "sourceNodeIndex": 301,
+      "pose": {
+        "translation": {
+          "x": 8.041926,
+          "y": 0.075,
+          "z": 2.3114
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-291",
+      "sourceNodeIndex": 302,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-292",
+      "sourceNodeIndex": 303,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-293",
+      "sourceNodeIndex": 304,
+      "pose": {
+        "translation": {
+          "x": -8.634724,
+          "y": 0.887969,
+          "z": 3.368675
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-294",
+      "sourceNodeIndex": 305,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-295",
+      "sourceNodeIndex": 306,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-296",
+      "sourceNodeIndex": 307,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-297",
+      "sourceNodeIndex": 308,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-298",
+      "sourceNodeIndex": 309,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-299",
+      "sourceNodeIndex": 310,
+      "pose": {
+        "translation": {
+          "x": -8.634724,
+          "y": 0.887969,
+          "z": 3.521075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-300",
+      "sourceNodeIndex": 311,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-301",
+      "sourceNodeIndex": 312,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-302",
+      "sourceNodeIndex": 313,
+      "pose": {
+        "translation": {
+          "x": 8.781931,
+          "y": 0.927413,
+          "z": -3.368675
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-303",
+      "sourceNodeIndex": 314,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-304",
+      "sourceNodeIndex": 315,
+      "pose": {
+        "translation": {
+          "x": -8.041926,
+          "y": 0.075,
+          "z": -2.159
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-305",
+      "sourceNodeIndex": 316,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-306",
+      "sourceNodeIndex": 317,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-307",
+      "sourceNodeIndex": 318,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-308",
+      "sourceNodeIndex": 319,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-309",
+      "sourceNodeIndex": 320,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-310",
+      "sourceNodeIndex": 321,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-311",
+      "sourceNodeIndex": 322,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-312",
+      "sourceNodeIndex": 323,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-313",
+      "sourceNodeIndex": 324,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-314",
+      "sourceNodeIndex": 325,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-315",
+      "sourceNodeIndex": 326,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-316",
+      "sourceNodeIndex": 327,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-317",
+      "sourceNodeIndex": 328,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-318",
+      "sourceNodeIndex": 329,
+      "pose": {
+        "translation": {
+          "x": -8.487517,
+          "y": 0.848525,
+          "z": 3.063875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-319",
+      "sourceNodeIndex": 330,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-320",
+      "sourceNodeIndex": 331,
+      "pose": {
+        "translation": {
+          "x": 7.889526,
+          "y": 0.075,
+          "z": 1.8542
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-321",
+      "sourceNodeIndex": 332,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-322",
+      "sourceNodeIndex": 333,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-323",
+      "sourceNodeIndex": 334,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-324",
+      "sourceNodeIndex": 335,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-325",
+      "sourceNodeIndex": 336,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-326",
+      "sourceNodeIndex": 337,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-327",
+      "sourceNodeIndex": 338,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-328",
+      "sourceNodeIndex": 340,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-329",
+      "sourceNodeIndex": 341,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-330",
+      "sourceNodeIndex": 342,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-331",
+      "sourceNodeIndex": 343,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-332",
+      "sourceNodeIndex": 344,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-333",
+      "sourceNodeIndex": 345,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-334",
+      "sourceNodeIndex": 346,
+      "pose": {
+        "translation": {
+          "x": -8.909413,
+          "y": 0.961572,
+          "z": 3.597275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-335",
+      "sourceNodeIndex": 347,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-336",
+      "sourceNodeIndex": 348,
+      "pose": {
+        "translation": {
+          "x": 8.634724,
+          "y": 0.887969,
+          "z": -3.368675
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-337",
+      "sourceNodeIndex": 349,
+      "pose": {
+        "translation": {
+          "x": -8.634724,
+          "y": 0.887969,
+          "z": 3.673475
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-338",
+      "sourceNodeIndex": 350,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-339",
+      "sourceNodeIndex": 351,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-340",
+      "sourceNodeIndex": 352,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-341",
+      "sourceNodeIndex": 353,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-342",
+      "sourceNodeIndex": 354,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-343",
+      "sourceNodeIndex": 355,
+      "pose": {
+        "translation": {
+          "x": 7.889526,
+          "y": 0.075,
+          "z": 2.159
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-344",
+      "sourceNodeIndex": 356,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-345",
+      "sourceNodeIndex": 357,
+      "pose": {
+        "translation": {
+          "x": 8.194326,
+          "y": 0.075,
+          "z": 2.0066
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-346",
+      "sourceNodeIndex": 366,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-347",
+      "sourceNodeIndex": 367,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-348",
+      "sourceNodeIndex": 368,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-349",
+      "sourceNodeIndex": 369,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-350",
+      "sourceNodeIndex": 370,
+      "pose": {
+        "translation": {
+          "x": 7.889526,
+          "y": 0.075,
+          "z": 1.5494
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-351",
+      "sourceNodeIndex": 371,
+      "pose": {
+        "translation": {
+          "x": -8.194326,
+          "y": 0.075,
+          "z": -2.3114
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-352",
+      "sourceNodeIndex": 372,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-353",
+      "sourceNodeIndex": 373,
+      "pose": {
+        "translation": {
+          "x": 7.737126,
+          "y": 0.075,
+          "z": 2.0066
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-354",
+      "sourceNodeIndex": 374,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-355",
+      "sourceNodeIndex": 375,
+      "pose": {
+        "translation": {
+          "x": 8.487517,
+          "y": 0.848525,
+          "z": -3.216275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-356",
+      "sourceNodeIndex": 376,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-357",
+      "sourceNodeIndex": 377,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-358",
+      "sourceNodeIndex": 378,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-359",
+      "sourceNodeIndex": 379,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-360",
+      "sourceNodeIndex": 380,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-361",
+      "sourceNodeIndex": 381,
+      "pose": {
+        "translation": {
+          "x": 7.737126,
+          "y": 0.075,
+          "z": 2.3114
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-362",
+      "sourceNodeIndex": 382,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-363",
+      "sourceNodeIndex": 383,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-364",
+      "sourceNodeIndex": 384,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-365",
+      "sourceNodeIndex": 385,
+      "pose": {
+        "translation": {
+          "x": -8.194326,
+          "y": 0.075,
+          "z": -1.8542
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-366",
+      "sourceNodeIndex": 386,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-367",
+      "sourceNodeIndex": 387,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-368",
+      "sourceNodeIndex": 388,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-369",
+      "sourceNodeIndex": 389,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-370",
+      "sourceNodeIndex": 390,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-371",
+      "sourceNodeIndex": 391,
+      "pose": {
+        "translation": {
+          "x": 8.041926,
+          "y": 0.075,
+          "z": 1.5494
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-372",
+      "sourceNodeIndex": 393,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-373",
+      "sourceNodeIndex": 394,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-374",
+      "sourceNodeIndex": 396,
+      "pose": {
+        "translation": {
+          "x": -8.487517,
+          "y": 0.848525,
+          "z": 3.216275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-375",
+      "sourceNodeIndex": 397,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-376",
+      "sourceNodeIndex": 398,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-377",
+      "sourceNodeIndex": 399,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-378",
+      "sourceNodeIndex": 400,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-379",
+      "sourceNodeIndex": 401,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-380",
+      "sourceNodeIndex": 402,
+      "pose": {
+        "translation": {
+          "x": 8.194326,
+          "y": 0.075,
+          "z": 1.8542
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-381",
+      "sourceNodeIndex": 403,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-382",
+      "sourceNodeIndex": 404,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-383",
+      "sourceNodeIndex": 405,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-384",
+      "sourceNodeIndex": 406,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-385",
+      "sourceNodeIndex": 407,
+      "pose": {
+        "translation": {
+          "x": 7.889526,
+          "y": 0.075,
+          "z": 1.7018
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-386",
+      "sourceNodeIndex": 408,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-387",
+      "sourceNodeIndex": 409,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-388",
+      "sourceNodeIndex": 410,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-389",
+      "sourceNodeIndex": 411,
+      "pose": {
+        "translation": {
+          "x": 8.781931,
+          "y": 0.927413,
+          "z": -3.063875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-390",
+      "sourceNodeIndex": 412,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-391",
+      "sourceNodeIndex": 413,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-392",
+      "sourceNodeIndex": 414,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-393",
+      "sourceNodeIndex": 415,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-394",
+      "sourceNodeIndex": 416,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-395",
+      "sourceNodeIndex": 417,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-396",
+      "sourceNodeIndex": 418,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-397",
+      "sourceNodeIndex": 419,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-398",
+      "sourceNodeIndex": 420,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-399",
+      "sourceNodeIndex": 421,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-400",
+      "sourceNodeIndex": 422,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-401",
+      "sourceNodeIndex": 423,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-402",
+      "sourceNodeIndex": 424,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-403",
+      "sourceNodeIndex": 425,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.076454,
+          "z": -1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-404",
+      "sourceNodeIndex": 426,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-405",
+      "sourceNodeIndex": 427,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-406",
+      "sourceNodeIndex": 428,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-407",
+      "sourceNodeIndex": 429,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-408",
+      "sourceNodeIndex": 430,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-409",
+      "sourceNodeIndex": 431,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -0.254
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-410",
+      "sourceNodeIndex": 440,
+      "pose": {
+        "translation": {
+          "x": 8.634724,
+          "y": 0.887969,
+          "z": -3.521075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-411",
+      "sourceNodeIndex": 441,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-412",
+      "sourceNodeIndex": 442,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-413",
+      "sourceNodeIndex": 443,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 1.6256
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-414",
+      "sourceNodeIndex": 444,
+      "pose": {
+        "translation": {
+          "x": -0.5334,
+          "y": 0.075254,
+          "z": 0.1016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-415",
+      "sourceNodeIndex": 445,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-416",
+      "sourceNodeIndex": 446,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-417",
+      "sourceNodeIndex": 447,
+      "pose": {
+        "translation": {
+          "x": -8.487517,
+          "y": 0.848525,
+          "z": 3.368675
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-418",
+      "sourceNodeIndex": 448,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-419",
+      "sourceNodeIndex": 449,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-420",
+      "sourceNodeIndex": 450,
+      "pose": {
+        "translation": {
+          "x": 0.0762,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-421",
+      "sourceNodeIndex": 451,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-422",
+      "sourceNodeIndex": 453,
+      "pose": {
+        "translation": {
+          "x": 0.6858,
+          "y": 0.075254,
+          "z": 2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-423",
+      "sourceNodeIndex": 454,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 1.778
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-424",
+      "sourceNodeIndex": 455,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-425",
+      "sourceNodeIndex": 456,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-426",
+      "sourceNodeIndex": 457,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-427",
+      "sourceNodeIndex": 458,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-428",
+      "sourceNodeIndex": 459,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-429",
+      "sourceNodeIndex": 460,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-430",
+      "sourceNodeIndex": 461,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-431",
+      "sourceNodeIndex": 462,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-432",
+      "sourceNodeIndex": 463,
+      "pose": {
+        "translation": {
+          "x": 7.737126,
+          "y": 0.075,
+          "z": 1.5494
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-433",
+      "sourceNodeIndex": 464,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-434",
+      "sourceNodeIndex": 465,
+      "pose": {
+        "translation": {
+          "x": -0.6858,
+          "y": 0.076454,
+          "z": -1.4732
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-435",
+      "sourceNodeIndex": 466,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-436",
+      "sourceNodeIndex": 467,
+      "pose": {
+        "translation": {
+          "x": 0.381,
+          "y": 0.076454,
+          "z": -1.9304
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-437",
+      "sourceNodeIndex": 468,
+      "pose": {
+        "translation": {
+          "x": -8.041926,
+          "y": 0.075,
+          "z": -1.8542
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-438",
+      "sourceNodeIndex": 469,
+      "pose": {
+        "translation": {
+          "x": 8.487517,
+          "y": 0.848525,
+          "z": -3.521075
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-439",
+      "sourceNodeIndex": 470,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 0.8636
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-440",
+      "sourceNodeIndex": 516,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.075254,
+          "z": 1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-441",
+      "sourceNodeIndex": 517,
+      "pose": {
+        "translation": {
+          "x": 8.041926,
+          "y": 0.075,
+          "z": 1.8542
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-442",
+      "sourceNodeIndex": 518,
+      "pose": {
+        "translation": {
+          "x": -0.8382,
+          "y": 0.075254,
+          "z": 0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-443",
+      "sourceNodeIndex": 519,
+      "pose": {
+        "translation": {
+          "x": -8.34031,
+          "y": 0.809081,
+          "z": 3.063875
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-444",
+      "sourceNodeIndex": 520,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-445",
+      "sourceNodeIndex": 521,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -1.3208
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-446",
+      "sourceNodeIndex": 522,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -2.0828
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-447",
+      "sourceNodeIndex": 523,
+      "pose": {
+        "translation": {
+          "x": -0.2286,
+          "y": 0.076454,
+          "z": -0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-448",
+      "sourceNodeIndex": 524,
+      "pose": {
+        "translation": {
+          "x": -8.634724,
+          "y": 0.887969,
+          "z": 3.216275
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-449",
+      "sourceNodeIndex": 525,
+      "pose": {
+        "translation": {
+          "x": 0.8382,
+          "y": 0.075254,
+          "z": 0.5588
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-450",
+      "sourceNodeIndex": 526,
+      "pose": {
+        "translation": {
+          "x": -7.889526,
+          "y": 0.075,
+          "z": -1.5494
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-451",
+      "sourceNodeIndex": 527,
+      "pose": {
+        "translation": {
+          "x": -0.0762,
+          "y": 0.076454,
+          "z": -1.016
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-452",
+      "sourceNodeIndex": 528,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.075254,
+          "z": 0.4064
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-453",
+      "sourceNodeIndex": 529,
+      "pose": {
+        "translation": {
+          "x": 0.5334,
+          "y": 0.076454,
+          "z": -0.7112
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-454",
+      "sourceNodeIndex": 613,
+      "pose": {
+        "translation": {
+          "x": 0.2286,
+          "y": 0.076454,
+          "z": -2.2352
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-455",
+      "sourceNodeIndex": 957,
+      "pose": {
+        "translation": {
+          "x": 7.889526,
+          "y": 0.075,
+          "z": 2.3114
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    },
+    {
+      "id": "fuel-456",
+      "sourceNodeIndex": 958,
+      "pose": {
+        "translation": {
+          "x": -0.381,
+          "y": 0.076454,
+          "z": -1.1684
+        },
+        "rotation": {
+          "roll": 0,
+          "pitch": 0,
+          "yaw": 1.5707963267948966
+        }
+      }
+    }
+  ]
+}

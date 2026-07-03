@@ -1,0 +1,21 @@
+{
+  "sourceNote": "Representative scoring sensor volumes for the 2026 REBUILT HUB openings. Manual scoring: Fuel scores when it passes through the top HUB opening and sensor array.",
+  "scoringVolumes": [
+    {
+      "id": "blue-hub-placeholder",
+      "pose": {
+        "translation": { "x": -6.2, "y": 1.1, "z": 0 },
+        "rotation": { "roll": 0, "pitch": 0, "yaw": 0 }
+      },
+      "sizeMeters": { "width": 1.2, "length": 1.2, "height": 1.0 }
+    },
+    {
+      "id": "red-hub-placeholder",
+      "pose": {
+        "translation": { "x": 6.2, "y": 1.1, "z": 0 },
+        "rotation": { "roll": 0, "pitch": 0, "yaw": 0 }
+      },
+      "sizeMeters": { "width": 1.2, "length": 1.2, "height": 1.0 }
+    }
+  ]
+}

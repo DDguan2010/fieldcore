@@ -1,0 +1,22 @@
+{
+  "sourceNote": "Values aligned with the 2026 REBUILT manual and AdvantageScope Field3d_2026FRCFieldV1 asset config.",
+  "fieldLengthMeters": 16.541,
+  "fieldWidthMeters": 8.069,
+  "wallHeightMeters": 0.5,
+  "gamePieceName": "Fuel",
+  "gamePieceDiameterMeters": 0.15,
+  "gamePieceRadiusMeters": 0.075,
+  "gamePieceMassKg": 0.215,
+  "officialFuelSetup": {
+    "depotPerAlliance": 24,
+    "outpostChutePerAlliance": 24,
+    "maxRobotPreloadPerRobot": 8,
+    "neutralZoneMin": 360,
+    "neutralZoneMax": 408
+  },
+  "simDefaultFuelCount": 456,
+  "neutralZoneFuelBoxMeters": {
+    "length": 5.23,
+    "width": 1.83
+  }
+}
