@@ -1,21 +1,21 @@
 {
-  "sourceNote": "Representative scoring sensor volumes for the 2026 REBUILT HUB openings. Manual scoring: Fuel scores when it passes through the top HUB opening and sensor array.",
+  "sourceNote": "2026 REBUILT HUB upper-opening targets aligned with AdvantageScope Field3d_2026FRCFieldV1 hub geometry. Shot aim height is 72in HUB top plus 0.30m clearance so Fuel clears the upper rim before falling into the hub. Coordinates are FieldCore meters.",
   "scoringVolumes": [
     {
-      "id": "blue-hub-placeholder",
+      "id": "blue-hub-upper-opening",
       "pose": {
-        "translation": { "x": -6.2, "y": 1.1, "z": 0 },
+        "translation": { "x": -3.6517386, "y": 2.1288, "z": 0 },
         "rotation": { "roll": 0, "pitch": 0, "yaw": 0 }
       },
-      "sizeMeters": { "width": 1.2, "length": 1.2, "height": 1.0 }
+      "sizeMeters": { "width": 1.1938, "length": 1.1938, "height": 0.85 }
     },
     {
-      "id": "red-hub-placeholder",
+      "id": "red-hub-upper-opening",
       "pose": {
-        "translation": { "x": 6.2, "y": 1.1, "z": 0 },
+        "translation": { "x": 3.6382646, "y": 2.1288, "z": 0 },
         "rotation": { "roll": 0, "pitch": 0, "yaw": 0 }
       },
-      "sizeMeters": { "width": 1.2, "length": 1.2, "height": 1.0 }
+      "sizeMeters": { "width": 1.1938, "length": 1.1938, "height": 0.85 }
     }
   ]
 }

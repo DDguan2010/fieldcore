@@ -40,8 +40,8 @@ export const frc2026FieldModule: FieldModule = {
   createScoringRules() {
     return [
       {
-        id: "placeholder-score",
-        label: "Placeholder score when a shot game piece enters a scoring volume",
+        id: "hub-upper-opening-score",
+        label: "Fuel scores when a shot game piece passes through the HUB upper opening",
       },
     ];
   },

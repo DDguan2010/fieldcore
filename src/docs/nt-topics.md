@@ -16,7 +16,25 @@
 /FieldCore/Robot/ShootCount
 ```
 
-`ShootCommand` may stay true while the robot is feeding balls. `ShootCount` is a monotonically increasing event counter for short shoot pulses that a browser NT client could otherwise miss. FieldCore launches a held game piece only when `ShootCommand` is true (continuous fire at the configured shots/second, default 5) or when `ShootCount` changes; `ShooterEnabled` alone (flywheel above idle) never launches game pieces.
+`ShootCommand` may stay true while the robot is feeding balls. `ShootCount` is a monotonically increasing event counter for short shoot pulses that a browser NT client could otherwise miss. FieldCore launches a held game piece only when `ShootCommand` is true (continuous fire at the configured shots/second, default 5) or when `ShootCount` changes; `ShooterEnabled` alone never launches game pieces.
+
+`PoseEstimate` is a WPILib blue-alliance wall-origin `double[6]`:
+
+```text
+[xMeters, yMeters, zMeters, rollRad, pitchRad, yawRad]
+```
+
+`ChassisSpeeds` is a robot-relative `double[3]`:
+
+```text
+[vxMetersPerSecond, vyMetersPerSecond, omegaRadPerSecond]
+```
+
+`ModuleStates` is a `double[8]`, ordered `FL, FR, BL, BR`:
+
+```text
+[FL speed mps, FL angle rad, FR speed mps, FR angle rad, BL speed mps, BL angle rad, BR speed mps, BR angle rad]
+```
 
 ## FieldCore -> Limelight
 
@@ -45,9 +63,9 @@ For Limelight-style robot projects, this is the preferred estimator path:
 
 By default FieldCore runs vision in continuous pose-output mode. In `physics-from-module-states` mode, the first `/FieldCore/Robot/PoseEstimate` initializes the FieldCore robot body, fresh `/FieldCore/Robot/ModuleStates` drive the physical robot motion, and that physical field pose is published every frame through standard Limelight `botpose_*` topics with metadata kept inside common robot-side reliability filter ranges.
 
-### NT4 timestamp handling
+## NT4 Timestamp Handling
 
-FieldCore's NT4 client never sends value frames before the first server time sync (RTT) completes. Values published while unsynced are queued and flushed once the server time offset is known, and outgoing value timestamps are kept strictly monotonic. Without this, the very first frames would carry client wall-clock timestamps far in the future, and the NT server would silently drop every later correctly-stamped update — freezing `/limelight-a/botpose_orb_wpiblue` and `hb` at the connect-time frame.
+FieldCore's NT4 client never sends value frames before the first server time sync (RTT) completes. Values published while unsynced are queued and flushed once the server time offset is known, and outgoing value timestamps are kept strictly monotonic. Without this, the very first frames would carry client wall-clock timestamps far in the future, and the NT server would silently drop every later correctly-stamped update, freezing `/limelight-a/botpose_orb_wpiblue` and `hb` at the connect-time frame.
 
 ## FieldCore Debug Vision
 

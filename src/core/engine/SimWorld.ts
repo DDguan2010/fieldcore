@@ -54,8 +54,28 @@ import { isPoseInsideBoxSensor } from "./SensorVolume";
 import { tryLoadGlb } from "./AssetLoader";
 
 const GRAVITY_METERS_PER_SECOND_SQUARED = 9.81;
-// Field-frame |x| of the hub centers (blue at -x, red at +x in FieldCore coords).
-const HUB_CENTER_X_METERS = 6.2;
+const METERS_PER_INCH = 0.0254;
+const HUB_WIDTH_METERS = 47 * METERS_PER_INCH;
+const HUB_INNER_OPENING_LOWER_HEIGHT_METERS = 56.5 * METERS_PER_INCH;
+const HUB_OUTER_TOP_HEIGHT_METERS = 72 * METERS_PER_INCH;
+const HUB_SHOT_CLEARANCE_ABOVE_TOP_METERS = 0.3;
+const HUB_UPPER_OPENING_AIM_HEIGHT_METERS =
+  HUB_OUTER_TOP_HEIGHT_METERS + HUB_SHOT_CLEARANCE_ABOVE_TOP_METERS;
+const BLUE_HUB_NEAR_FACE_X_WPILIB_METERS = 4.0218614;
+const RED_HUB_NEAR_FACE_X_WPILIB_METERS = 11.3118646;
+const HUB_EXIT_CHUTE_OFFSET_TOWARD_FIELD_CENTER_METERS = 1.05;
+// Fallbacks mirror the 2026 AdvantageScope hub model and aim above the upper rim
+// so the Fuel clears the top edge before falling into the hub.
+const BLUE_HUB_TARGET_METERS = new Vector3(
+  wpilibBlueXToFieldCoreX(BLUE_HUB_NEAR_FACE_X_WPILIB_METERS + HUB_WIDTH_METERS / 2),
+  HUB_UPPER_OPENING_AIM_HEIGHT_METERS,
+  0,
+);
+const RED_HUB_TARGET_METERS = new Vector3(
+  wpilibBlueXToFieldCoreX(RED_HUB_NEAR_FACE_X_WPILIB_METERS + HUB_WIDTH_METERS / 2),
+  HUB_UPPER_OPENING_AIM_HEIGHT_METERS,
+  0,
+);
 
 export interface ShooterConfig {
   enabledTopic: string;
@@ -976,10 +996,11 @@ export class SimWorld {
     piece.scoredAtSeconds = null;
     piece.contactStartedAtSeconds = null;
     const allianceSign = piece.pose.translation.x < 0 ? -1 : 1;
+    const hubTarget = this.getScoringTargetForFieldX(piece.pose.translation.x);
     // Exit chute at the hub base, offset toward field center so the ball rolls
     // back into play instead of resting against the hub collider.
     const exitPosition = new Vector3(
-      allianceSign * (Math.abs(HUB_CENTER_X_METERS) - 1.05),
+      hubTarget.x - allianceSign * HUB_EXIT_CHUTE_OFFSET_TOWARD_FIELD_CENTER_METERS,
       0.45,
       (Math.random() - 0.5) * 1.2,
     );
@@ -1005,12 +1026,16 @@ export class SimWorld {
 
   private getAllianceScoringTarget() {
     const robotPose = this.getAuthoritativeRobotPose();
-    const targetId = robotPose.translation.x < 0 ? "blue" : "red";
+    return this.getScoringTargetForFieldX(robotPose.translation.x);
+  }
+
+  private getScoringTargetForFieldX(fieldX: number) {
+    const targetId = fieldX < 0 ? "blue" : "red";
     const volume =
       this.scoringVolumes.find((candidate) => candidate.id.toLowerCase().includes(targetId)) ??
       this.scoringVolumes[0];
     if (!volume) {
-      return new Vector3(robotPose.translation.x < 0 ? -6.2 : 6.2, 1.25, 0);
+      return fieldX < 0 ? BLUE_HUB_TARGET_METERS.clone() : RED_HUB_TARGET_METERS.clone();
     }
     return new Vector3(
       volume.pose.translation.x,
