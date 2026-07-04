@@ -80,12 +80,6 @@ Recommended flow:
 
 Do not use `/FieldCore/Sim/TrueRobotPose` as the robot estimator pose. That topic is debug-oriented. Robot code should consume the vision-style pose topics and decide how to fuse them.
 
-See the detailed integration guide:
-
-- [10541 Robot Integration Guide](./docs/FIELDCORE_10541_ROBOT_INTEGRATION.md)
-- [NetworkTables Topics](./src/docs/nt-topics.md)
-- [General Integration Notes](./src/docs/integration.md)
-
 ## NetworkTables Behavior
 
 FieldCore can operate in a physics-first simulation mode:
@@ -121,13 +115,6 @@ FieldCore references official and community FRC resources to match the 2026 fiel
 - 2026 REBUILT game manual: <https://firstfrc.blob.core.windows.net/frc2026/Manual/Translations/2026GameManual-CS.pdf>
 - AdvantageScope source: <https://github.com/Mechanical-Advantage/AdvantageScope>
 - AdvantageScope 2026 field asset package: <https://github.com/Mechanical-Advantage/AdvantageScopeAssets/releases/download/archive-v1/Field3d_2026FRCFieldV1.zip>
-
-## Documentation
-
-- [Productization Plan](./docs/FIELDCORE_2026_PRODUCTIZATION.md)
-- [Development Plan](./docs/FIELDCORE_DEVELOPMENT_PLAN.md)
-- [Todo List](./docs/FIELDCORE_TODO.md)
-- [Field Module Authoring](./src/docs/field-module-authoring.md)
 
 ## Status
 
