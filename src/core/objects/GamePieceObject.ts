@@ -17,6 +17,7 @@ export class GamePieceObject extends BaseSimObject {
   contactStartedAtSeconds: number | null = null;
   shotAtSeconds: number | null = null;
   scoredAtSeconds: number | null = null;
+  previousPose: Pose3dDto | null = null;
 
   constructor(id: string, pose: Pose3dDto, mesh: Mesh, body?: PhysicsBody) {
     super(id, "game-piece", pose, { label: id }, mesh, body);

@@ -74,6 +74,13 @@ export function SimulationPage({ fieldModuleId, registry }: SimulationPageProps)
     <main className="simulation-layout">
       <section className="viewport-wrap">
         <canvas ref={canvasRef} className="sim-canvas" />
+        {!stats && !error ? (
+          <div className="viewport-loading" role="status" aria-live="polite">
+            <div className="loading-spinner" aria-hidden="true" />
+            <strong>Loading field...</strong>
+            <span>Preparing the official field model and physics world.</span>
+          </div>
+        ) : null}
         {error ? <div className="viewport-error">{error}</div> : null}
       </section>
       <aside className="side-panel">

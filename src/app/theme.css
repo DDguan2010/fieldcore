@@ -171,6 +171,44 @@ button:disabled {
   color: var(--fc-danger);
 }
 
+.viewport-loading {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: #000000;
+  color: var(--fc-text);
+  text-align: center;
+  pointer-events: none;
+}
+
+.viewport-loading strong {
+  font-size: 1rem;
+}
+
+.viewport-loading span {
+  color: var(--fc-muted);
+  font-size: 0.85rem;
+}
+
+.loading-spinner {
+  width: 32px;
+  height: 32px;
+  border: 2px solid #2a2a2a;
+  border-top-color: var(--fc-primary);
+  border-radius: 50%;
+  animation: fieldcore-spin 0.85s linear infinite;
+}
+
+@keyframes fieldcore-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .side-panel {
   overflow: auto;
   min-height: 0;

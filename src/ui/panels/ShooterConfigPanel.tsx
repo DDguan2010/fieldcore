@@ -15,7 +15,7 @@ export function ShooterConfigPanel({ world }: { world: SimWorld }) {
         <NumberField label="Base Speed (m/s)" value={config.baseLaunchSpeedMetersPerSecond} onChange={(value) => { config.baseLaunchSpeedMetersPerSecond = value; refresh(); }} />
         <NumberField label="RPM Scale" value={config.rpmToLaunchSpeedScale} onChange={(value) => { config.rpmToLaunchSpeedScale = value; refresh(); }} />
         <NumberField label="Shots Per Second" value={config.shotsPerSecond} onChange={(value) => { config.shotsPerSecond = value; refresh(); }} />
-        <NumberField label="Launch Angle Offset (deg)" value={config.launchAngleOffsetDeg} onChange={(value) => { config.launchAngleOffsetDeg = value; refresh(); }} />
+        <NumberField label="Shot Arc Angle (deg)" value={config.launchAngleOffsetDeg} onChange={(value) => { config.launchAngleOffsetDeg = value; refresh(); }} />
         <NumberField label="Spread Std Dev (deg)" value={config.spreadStdDevDeg} onChange={(value) => { config.spreadStdDevDeg = value; refresh(); }} />
         <NumberField label="Latency (s)" value={config.latencySeconds} onChange={(value) => { config.latencySeconds = value; refresh(); }} />
       </div>

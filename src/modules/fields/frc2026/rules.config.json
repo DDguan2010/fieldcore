@@ -1,10 +1,10 @@
 {
-  "sourceNote": "2026 REBUILT HUB upper-opening targets aligned with AdvantageScope Field3d_2026FRCFieldV1 hub geometry. Shot aim height is 72in HUB top plus 0.30m clearance so Fuel clears the upper rim before falling into the hub. Coordinates are FieldCore meters.",
+  "sourceNote": "2026 REBUILT HUB upper-opening targets aligned to the AdvantageScope Field3d_2026FRCFieldV1 GE-263 hub assembly center. Shot aim height is 72in HUB top plus 0.30m clearance so Fuel clears the upper rim before falling into the hub. Coordinates are FieldCore meters.",
   "scoringVolumes": [
     {
       "id": "blue-hub-upper-opening",
       "pose": {
-        "translation": { "x": -3.6517386, "y": 2.1288, "z": 0 },
+        "translation": { "x": -3.493265, "y": 2.1288, "z": 0 },
         "rotation": { "roll": 0, "pitch": 0, "yaw": 0 }
       },
       "sizeMeters": { "width": 1.1938, "length": 1.1938, "height": 0.85 }
@@ -12,7 +12,7 @@
     {
       "id": "red-hub-upper-opening",
       "pose": {
-        "translation": { "x": 3.6382646, "y": 2.1288, "z": 0 },
+        "translation": { "x": 3.493265, "y": 2.1288, "z": 0 },
         "rotation": { "roll": 0, "pitch": 0, "yaw": 0 }
       },
       "sizeMeters": { "width": 1.1938, "length": 1.1938, "height": 0.85 }

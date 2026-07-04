@@ -55,26 +55,25 @@ import { tryLoadGlb } from "./AssetLoader";
 
 const GRAVITY_METERS_PER_SECOND_SQUARED = 9.81;
 const METERS_PER_INCH = 0.0254;
-const HUB_WIDTH_METERS = 47 * METERS_PER_INCH;
-const HUB_INNER_OPENING_LOWER_HEIGHT_METERS = 56.5 * METERS_PER_INCH;
 const HUB_OUTER_TOP_HEIGHT_METERS = 72 * METERS_PER_INCH;
 const HUB_SHOT_CLEARANCE_ABOVE_TOP_METERS = 0.3;
 const HUB_UPPER_OPENING_AIM_HEIGHT_METERS =
   HUB_OUTER_TOP_HEIGHT_METERS + HUB_SHOT_CLEARANCE_ABOVE_TOP_METERS;
-const BLUE_HUB_NEAR_FACE_X_WPILIB_METERS = 4.0218614;
-const RED_HUB_NEAR_FACE_X_WPILIB_METERS = 11.3118646;
+const HUB_CENTER_X_METERS = 3.493265;
+const HUB_CENTER_Z_METERS = 0;
 const HUB_EXIT_CHUTE_OFFSET_TOWARD_FIELD_CENTER_METERS = 1.05;
-// Fallbacks mirror the 2026 AdvantageScope hub model and aim above the upper rim
-// so the Fuel clears the top edge before falling into the hub.
+// Center from the AdvantageScope Field3d_2026FRCFieldV1 GE-263 hub assembly
+// bounds. Aim above the upper rim so the Fuel clears the top edge before
+// falling through the hub center.
 const BLUE_HUB_TARGET_METERS = new Vector3(
-  wpilibBlueXToFieldCoreX(BLUE_HUB_NEAR_FACE_X_WPILIB_METERS + HUB_WIDTH_METERS / 2),
+  -HUB_CENTER_X_METERS,
   HUB_UPPER_OPENING_AIM_HEIGHT_METERS,
-  0,
+  HUB_CENTER_Z_METERS,
 );
 const RED_HUB_TARGET_METERS = new Vector3(
-  wpilibBlueXToFieldCoreX(RED_HUB_NEAR_FACE_X_WPILIB_METERS + HUB_WIDTH_METERS / 2),
+  HUB_CENTER_X_METERS,
   HUB_UPPER_OPENING_AIM_HEIGHT_METERS,
-  0,
+  HUB_CENTER_Z_METERS,
 );
 
 export interface ShooterConfig {
@@ -102,11 +101,11 @@ export const defaultShooterConfig: ShooterConfig = {
     translation: { x: 0, y: 0.45, z: 0 },
     rotation: { roll: 0, pitch: 0, yaw: 0 },
   },
-  baseLaunchSpeedMetersPerSecond: 7,
-  rpmToLaunchSpeedScale: 0.0015,
+  baseLaunchSpeedMetersPerSecond: 7.5,
+  rpmToLaunchSpeedScale: 0.0005,
   shotsPerSecond: 5,
-  launchAngleOffsetDeg: 22,
-  spreadStdDevDeg: 2,
+  launchAngleOffsetDeg: 64,
+  spreadStdDevDeg: 0,
   latencySeconds: 0.05,
 };
 
@@ -629,10 +628,11 @@ export class SimWorld {
         }
       });
     }
+    this.setGamePieceVisualsVisible({ mesh }, true);
     const aggregate = new PhysicsAggregate(mesh, PhysicsShapeType.SPHERE, {
       mass: this.gamePieceMassKg,
       friction: 0.6,
-      restitution: 0.35,
+      restitution: 0.18,
       startAsleep: true,
     }, this.scene);
     aggregate.body.setLinearDamping(0.16);
@@ -727,6 +727,7 @@ export class SimWorld {
     let heldIndex = 0;
     this.gamePieces.forEach((piece) => {
       if (piece.mesh && piece.state !== "HELD") {
+        piece.previousPose = piece.pose;
         piece.pose = {
           translation: { x: piece.mesh.position.x, y: piece.mesh.position.y, z: piece.mesh.position.z },
           rotation: vectorQuaternionToPose(piece.mesh.position, piece.mesh.rotationQuaternion ?? poseToQuaternion(piece.pose)).rotation,
@@ -737,11 +738,24 @@ export class SimWorld {
         // but the actual physics body stays parked far below the field so the
         // invisible held collider can never push the robot chassis or free balls.
         piece.pose = this.getHeldGamePiecePose(heldIndex);
-        piece.mesh.isVisible = false;
-        piece.mesh.setEnabled(true);
+        this.setGamePieceVisualsVisible(piece, false);
         this.parkGamePieceBody(piece, heldIndex);
         heldIndex += 1;
       }
+    });
+  }
+
+  private setGamePieceVisualsVisible(piece: Pick<GamePieceObject, "mesh">, visible: boolean) {
+    if (!piece.mesh) {
+      return;
+    }
+    piece.mesh.setEnabled(true);
+    // The root sphere is the physics shape. When an official GLB is attached,
+    // keep that collider invisible and show only the cloned visual meshes.
+    piece.mesh.isVisible = visible && this.gamePieceTemplate.length === 0;
+    piece.mesh.getChildMeshes(false).forEach((child) => {
+      child.setEnabled(visible);
+      child.isVisible = visible;
     });
   }
 
@@ -788,10 +802,8 @@ export class SimWorld {
     piece.contactStartedAtSeconds = null;
     piece.shotAtSeconds = null;
     piece.pose = this.getHeldGamePiecePose(heldIndex);
-    if (piece.mesh) {
-      piece.mesh.isVisible = false;
-      piece.mesh.setEnabled(true);
-    }
+    piece.previousPose = null;
+    this.setGamePieceVisualsVisible(piece, false);
     piece.body?.setMotionType(PhysicsMotionType.ANIMATED);
     piece.body?.setPrestepType(PhysicsPrestepType.TELEPORT);
     this.parkGamePieceBody(piece, heldIndex);
@@ -917,6 +929,7 @@ export class SimWorld {
   private launchHeldGamePiece(piece: GamePieceObject, launchPose: Pose3dDto, velocity: Vector3) {
     const launchPosition = poseToVector3(launchPose);
     const launchRotation = poseToQuaternion(launchPose);
+    piece.previousPose = launchPose;
     piece.pose = launchPose;
 
     if (piece.body) {
@@ -926,8 +939,7 @@ export class SimWorld {
       piece.body.setAngularVelocity(Vector3.Zero());
     }
     if (piece.mesh) {
-      piece.mesh.setEnabled(true);
-      piece.mesh.isVisible = true;
+      this.setGamePieceVisualsVisible(piece, true);
       piece.mesh.position.copyFrom(launchPosition);
       piece.mesh.rotationQuaternion = launchRotation.clone();
       piece.mesh.computeWorldMatrix(true);
@@ -968,17 +980,7 @@ export class SimWorld {
       if (piece.state !== "SHOT") {
         return;
       }
-      const scored = this.scoringVolumes.some((volume) => {
-        const size = {
-          width: (volume.mesh?.getBoundingInfo().boundingBox.extendSize.x ?? 0) * 2,
-          length: (volume.mesh?.getBoundingInfo().boundingBox.extendSize.z ?? 0) * 2,
-          height: (volume.mesh?.getBoundingInfo().boundingBox.extendSize.y ?? 0) * 2,
-        };
-        return isPoseInsideBoxSensor(piece.pose, {
-          pose: volume.pose,
-          sizeMeters: size,
-        });
-      });
+      const scored = this.scoringVolumes.some((volume) => this.didShotScore(piece, volume));
       if (scored) {
         piece.state = "SCORED";
         piece.shotAtSeconds = null;
@@ -1009,6 +1011,7 @@ export class SimWorld {
     piece.state = "FREE";
     piece.scoredAtSeconds = null;
     piece.contactStartedAtSeconds = null;
+    piece.previousPose = null;
     const allianceSign = piece.pose.translation.x < 0 ? -1 : 1;
     const hubTarget = this.getScoringTargetForFieldX(piece.pose.translation.x);
     // Exit chute at the hub base, offset toward field center so the ball rolls
@@ -1019,10 +1022,9 @@ export class SimWorld {
       (Math.random() - 0.5) * 1.2,
     );
     if (piece.mesh) {
+      this.setGamePieceVisualsVisible(piece, true);
       piece.mesh.position.copyFrom(exitPosition);
       piece.mesh.computeWorldMatrix(true);
-      piece.mesh.setEnabled(true);
-      piece.mesh.isVisible = true;
     }
     if (piece.body) {
       piece.body.transformNode.setAbsolutePosition(exitPosition);
@@ -1045,16 +1047,17 @@ export class SimWorld {
 
   private getScoringTargetForFieldX(fieldX: number) {
     const targetId = fieldX < 0 ? "blue" : "red";
+    const officialHubCenter = fieldX < 0 ? BLUE_HUB_TARGET_METERS : RED_HUB_TARGET_METERS;
     const volume =
       this.scoringVolumes.find((candidate) => candidate.id.toLowerCase().includes(targetId)) ??
       this.scoringVolumes[0];
     if (!volume) {
-      return fieldX < 0 ? BLUE_HUB_TARGET_METERS.clone() : RED_HUB_TARGET_METERS.clone();
+      return officialHubCenter.clone();
     }
     return new Vector3(
-      volume.pose.translation.x,
+      officialHubCenter.x,
       volume.pose.translation.y,
-      volume.pose.translation.z,
+      officialHubCenter.z,
     );
   }
 
@@ -1062,16 +1065,76 @@ export class SimWorld {
     const dx = target.x - start.x;
     const dz = target.z - start.z;
     const horizontalDistance = Math.max(0.1, Math.hypot(dx, dz));
-    const flightTime = Math.max(0.55, Math.min(1.45, horizontalDistance / Math.max(4.5, requestedSpeed * 0.55)));
-    const spreadYaw = (gaussian() * this.shooterConfig.spreadStdDevDeg * Math.PI) / 180;
+    const dy = target.y - start.y;
+    const launchAngleRadians = (clamp(this.shooterConfig.launchAngleOffsetDeg, 45, 72) * Math.PI) / 180;
+    const cosAngle = Math.cos(launchAngleRadians);
+    const tanAngle = Math.tan(launchAngleRadians);
+    const ballisticDenominator =
+      2 * cosAngle * cosAngle * (horizontalDistance * tanAngle - dy);
+    let horizontalSpeed: number;
+    let verticalSpeed: number;
+    if (ballisticDenominator > 1e-6) {
+      const requiredSpeed = Math.sqrt(
+        (GRAVITY_METERS_PER_SECOND_SQUARED * horizontalDistance * horizontalDistance) /
+          ballisticDenominator,
+      );
+      const finiteRequestedSpeed = Number.isFinite(requestedSpeed) && requestedSpeed > 0
+        ? requestedSpeed
+        : requiredSpeed;
+      const softSolvedSpeed = Math.min(
+        Math.max(finiteRequestedSpeed, requiredSpeed),
+        requiredSpeed * 1.04,
+      );
+      horizontalSpeed = softSolvedSpeed * cosAngle;
+      verticalSpeed = softSolvedSpeed * Math.sin(launchAngleRadians);
+    } else {
+      const flightTime = Math.max(0.9, Math.min(1.8, horizontalDistance / 2.7));
+      horizontalSpeed = horizontalDistance / flightTime;
+      verticalSpeed =
+        (dy + 0.5 * GRAVITY_METERS_PER_SECOND_SQUARED * flightTime * flightTime) /
+        flightTime;
+    }
+    const spreadStdDevDeg = Number.isFinite(this.shooterConfig.spreadStdDevDeg)
+      ? Math.max(0, this.shooterConfig.spreadStdDevDeg)
+      : 0;
+    const spreadYaw = spreadStdDevDeg > 0 ? (gaussian() * spreadStdDevDeg * Math.PI) / 180 : 0;
     const cos = Math.cos(spreadYaw);
     const sin = Math.sin(spreadYaw);
-    const vx = (dx / flightTime) * cos - (dz / flightTime) * sin;
-    const vz = (dx / flightTime) * sin + (dz / flightTime) * cos;
-    const vy =
-      (target.y - start.y + 0.5 * GRAVITY_METERS_PER_SECOND_SQUARED * flightTime * flightTime) /
-      flightTime;
-    return new Vector3(vx, vy, vz);
+    const directionX = dx / horizontalDistance;
+    const directionZ = dz / horizontalDistance;
+    const baseVx = directionX * horizontalSpeed;
+    const baseVz = directionZ * horizontalSpeed;
+    const vx = baseVx * cos - baseVz * sin;
+    const vz = baseVx * sin + baseVz * cos;
+    return new Vector3(vx, verticalSpeed, vz);
+  }
+
+  private didShotScore(piece: GamePieceObject, volume: ScoringVolume) {
+    const size = {
+      width: (volume.mesh?.getBoundingInfo().boundingBox.extendSize.x ?? 0) * 2,
+      length: (volume.mesh?.getBoundingInfo().boundingBox.extendSize.z ?? 0) * 2,
+      height: (volume.mesh?.getBoundingInfo().boundingBox.extendSize.y ?? 0) * 2,
+    };
+    const sensor = {
+      pose: volume.pose,
+      sizeMeters: {
+        width: size.width + this.gamePieceRadiusMeters * 2,
+        length: size.length + this.gamePieceRadiusMeters * 2,
+        height: size.height + this.gamePieceRadiusMeters * 2,
+      },
+    };
+    if (isPoseInsideBoxSensor(piece.pose, sensor)) {
+      return true;
+    }
+    if (!piece.previousPose) {
+      return false;
+    }
+    return segmentIntersectsAxisAlignedBox(
+      poseToVector3(piece.previousPose),
+      poseToVector3(piece.pose),
+      poseToVector3(sensor.pose),
+      new Vector3(sensor.sizeMeters.width / 2, sensor.sizeMeters.height / 2, sensor.sizeMeters.length / 2),
+    );
   }
 
   private createNeutralRobotPose(): Pose3dDto {
@@ -1146,3 +1209,43 @@ const gaussian = () => {
   const v = Math.random();
   return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
 };
+
+const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
+
+function segmentIntersectsAxisAlignedBox(
+  start: Vector3,
+  end: Vector3,
+  center: Vector3,
+  halfExtents: Vector3,
+) {
+  let tMin = 0;
+  let tMax = 1;
+  const startValues = [start.x, start.y, start.z];
+  const endValues = [end.x, end.y, end.z];
+  const centerValues = [center.x, center.y, center.z];
+  const halfExtentValues = [halfExtents.x, halfExtents.y, halfExtents.z];
+
+  for (let axis = 0; axis < 3; axis += 1) {
+    const axisStart = startValues[axis];
+    const axisDelta = endValues[axis] - axisStart;
+    const min = centerValues[axis] - halfExtentValues[axis];
+    const max = centerValues[axis] + halfExtentValues[axis];
+
+    if (Math.abs(axisDelta) < 1e-9) {
+      if (axisStart < min || axisStart > max) {
+        return false;
+      }
+      continue;
+    }
+
+    const t1 = (min - axisStart) / axisDelta;
+    const t2 = (max - axisStart) / axisDelta;
+    tMin = Math.max(tMin, Math.min(t1, t2));
+    tMax = Math.min(tMax, Math.max(t1, t2));
+    if (tMin > tMax) {
+      return false;
+    }
+  }
+
+  return true;
+}
