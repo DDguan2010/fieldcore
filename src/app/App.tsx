@@ -15,12 +15,8 @@ export function App() {
     <ErrorBoundary>
       <div className="app-shell">
         <header className="top-bar">
-          <button className="brand-button" onClick={() => setRoute("select")}>
-            <span className="brand-mark">FC</span>
-            <span>
-              <strong>FieldCore</strong>
-              <small>FRC physics simulator</small>
-            </span>
+          <button className="brand-button" onClick={() => setRoute("select")} aria-label="FieldCore home">
+            <img className="brand-logo" src="/assets/brand/fieldcorelogo.svg" alt="FieldCore" />
           </button>
           <nav className="top-nav">
             <button onClick={() => setRoute("select")}>Fields</button>

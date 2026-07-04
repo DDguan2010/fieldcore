@@ -175,6 +175,10 @@ export class SimWorld {
     await this.loadGamePieceTemplate(assets.gamePieceModelUrl);
     this.createRobot();
     this.createIntake();
+    this.scene.onAfterPhysicsObservable.add(() => {
+      this.robot.syncPoseFromPhysics();
+      this.syncRobotAttachedObjects();
+    });
     this.resetGamePieces();
     this.visionSystem = new VisionSimulationSystem(
       () => this.getRobotFramePose(),
@@ -199,11 +203,11 @@ export class SimWorld {
     }
 
     this.robot.syncPoseFromPhysics();
+    this.syncRobotAttachedObjects();
     this.updateRobotMotionFromNetworkTables(dtSeconds, nowSeconds);
     if (this.robot.motionMode === "physics-from-module-states") {
       this.robot.applySuspensionStability(dtSeconds);
     }
-    this.intake.updateFromRobotPose(this.getRobotFramePose());
     this.updateGamePiecePoses();
     this.updateIntakeState(nowSeconds);
     this.updateShooter(nowSeconds);
@@ -238,10 +242,12 @@ export class SimWorld {
 
   resetRobotPose() {
     this.robot.setPose(this.robotEstimatedPose ?? this.createNeutralRobotPose());
+    this.syncRobotAttachedObjects();
   }
 
   setRobotPoseFromWallBlue(xMeters: number, yMeters: number, yawRadians: number) {
     this.robot.setPose(this.wallBlueRobotPoseArrayToFieldCorePose([xMeters, yMeters, 0, 0, 0, yawRadians]));
+    this.syncRobotAttachedObjects();
     this.robotPoseInitializedFromNt = true;
   }
 
@@ -647,6 +653,7 @@ export class SimWorld {
       this.lastRobotPoseUpdateSeconds = performance.now() / 1000;
       if (!this.robotPoseInitializedFromNt || this.robot.motionMode === "networktables-pose") {
         this.robot.setPose(pose);
+        this.syncRobotAttachedObjects();
         this.robotPoseInitializedFromNt = true;
       }
     });
@@ -946,6 +953,13 @@ export class SimWorld {
       return this.robotModelPoseToRobotFramePose(this.robotEstimatedPose);
     }
     return this.getRobotFramePose();
+  }
+
+  private syncRobotAttachedObjects() {
+    if (!this.intake) {
+      return;
+    }
+    this.intake.updateFromRobotPose(this.getRobotFramePose());
   }
 
   private updateScoring() {

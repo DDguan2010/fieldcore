@@ -25,7 +25,7 @@ export const defaultRobotConfig: RobotConfig = {
   heightMeters: 0.55,
   massKg: 68,
   bumperHeightMeters: 0.18,
-  color: "#9ccaff",
+  color: "#f5f5f2",
 };
 
 export class RobotObject extends BaseSimObject {

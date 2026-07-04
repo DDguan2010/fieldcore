@@ -1,19 +1,19 @@
 :root {
   color-scheme: dark;
-  --fc-bg: #111318;
-  --fc-surface: #191c22;
-  --fc-surface-high: #22262e;
-  --fc-panel: #171a20;
-  --fc-outline: #3c424d;
-  --fc-primary: #9ccaff;
-  --fc-secondary: #d2c4ff;
-  --fc-success: #7bd88f;
-  --fc-warning: #ffd166;
-  --fc-danger: #ff8a80;
-  --fc-text: #eef1f8;
-  --fc-muted: #aeb6c5;
+  --fc-bg: #000000;
+  --fc-surface: #050505;
+  --fc-surface-high: #0d0d0d;
+  --fc-panel: #030303;
+  --fc-outline: #242424;
+  --fc-primary: #ffffff;
+  --fc-secondary: #a8a8a8;
+  --fc-success: #7ae3a1;
+  --fc-warning: #f2c96d;
+  --fc-danger: #ff7f76;
+  --fc-text: #f5f5f2;
+  --fc-muted: #929292;
   --md-sys-color-primary: var(--fc-primary);
-  --md-sys-color-on-primary: #06213b;
+  --md-sys-color-on-primary: #000000;
   --md-sys-color-surface: var(--fc-surface);
   --md-sys-color-on-surface: var(--fc-text);
   --md-sys-color-outline: var(--fc-outline);
@@ -56,6 +56,7 @@ button {
 
 button:hover {
   border-color: var(--fc-primary);
+  background: #141414;
 }
 
 button:disabled {
@@ -79,39 +80,22 @@ button:disabled {
   gap: 1rem;
   padding: 0 1rem;
   border-bottom: 1px solid var(--fc-outline);
-  background: #13161b;
+  background: #000000;
 }
 
 .brand-button {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
   border: 0;
   background: transparent;
   padding: 0;
 }
 
-.brand-mark {
-  width: 36px;
-  height: 36px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--fc-outline);
-  border-radius: 8px;
-  background: var(--fc-surface-high);
-  color: var(--fc-primary);
-  font-weight: 800;
-}
-
-.brand-button strong,
-.brand-button small {
+.brand-logo {
   display: block;
-  text-align: left;
-}
-
-.brand-button small {
-  color: var(--fc-muted);
-  font-size: 0.75rem;
+  width: 174px;
+  max-width: min(44vw, 174px);
+  height: auto;
 }
 
 .top-nav {
@@ -169,7 +153,7 @@ button:disabled {
 .viewport-wrap {
   position: relative;
   min-height: 0;
-  background: #080a0d;
+  background: #000000;
 }
 
 .sim-canvas {
@@ -254,7 +238,7 @@ button:disabled {
   width: 100%;
   border: 1px solid var(--fc-outline);
   border-radius: 8px;
-  background: #101319;
+  background: #070707;
   color: var(--fc-text);
   padding: 0.5rem 0.6rem;
 }
@@ -281,7 +265,7 @@ button:disabled {
   min-height: 44px;
   padding: 0.5rem 0.75rem;
   border-top: 1px solid var(--fc-outline);
-  background: #13161b;
+  background: #000000;
   color: var(--fc-muted);
   font-size: 0.82rem;
 }
@@ -312,7 +296,7 @@ pre {
   overflow: auto;
   padding: 1rem;
   border-radius: 8px;
-  background: #090b0f;
+  background: #050505;
   border: 1px solid var(--fc-outline);
 }
 

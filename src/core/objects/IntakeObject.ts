@@ -43,6 +43,7 @@ export class IntakeObject extends BaseSimObject {
       const visualPose = this.getVisualPose();
       this.mesh.position.set(this.pose.translation.x, this.pose.translation.y, this.pose.translation.z);
       this.mesh.rotationQuaternion = poseToQuaternion(visualPose);
+      this.mesh.computeWorldMatrix(true);
     }
   }
 
